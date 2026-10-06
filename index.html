@@ -4,39 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>[hidden]{display:none!important} img{max-width:100%} body{margin:0}</style>
-<title>营销手记</title>
+<title>Hannah · 营销手记</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Caveat:wght@500&family=Jost:wght@300;400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
 <style>
-/* Layout: a two-wing notebook. Left wing = 学习笔记, right wing = 作品集; every page ends with the links back to the other wing. */
+/* Layout: editorial portfolio. Split-screen home; inner pages = minimal top bar, huge tight serif titles, outline pills,
+   full-bleed black-ruled 2-column grids, tilted "screen" collages as heroes, tinted meta-table sections. */
 :root{
-  --bg:#FBFAF7; --surface:#FFFFFF; --ink:#1F1E1B; --ink-2:#5C5951; --ink-3:#8F8B81; --line:#E7E3DA; --hover:#F3F1EC;
-  --serif:"Noto Serif SC","Songti SC",serif; --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-  /* 职能：8 种柔和色，b = 色带/底色，i = 同色系文字 */
-  --brand-b:#F8D3DE; --brand-i:#8E3550;
-  --ecom-b:#FAD8BF; --ecom-i:#8A4A18;
-  --cmi-b:#F7EBB8; --cmi-i:#665A0E;
-  --trade-b:#DDEDC2; --trade-i:#4A6420;
-  --crm-b:#C9EDE0; --crm-i:#1F6650;
-  --pr-b:#D6D6F7; --pr-i:#45448E;
-  --media-b:#CBE3F7; --media-i:#245E8C;
-  --digital-b:#EFD5F2; --digital-i:#74357F;
-  /* 能力：正文段落色块，颜色更深 */
+  --bg:#F6F5F1; --panel:#ECEBE6; --surface:#FBFAF7; --ink:#141414; --ink-2:#55534D; --ink-3:#8C8A83; --line:#D9D7D0; --rule:#141414; --hover:#EFEEE9; --bezel:#1B1B1B; --rim:#9A9893;
+  --geo:"Jost","Noto Sans SC","PingFang SC",system-ui,sans-serif;
+  --serif:"Bodoni Moda","Noto Serif SC","Songti SC",serif;
+  --zhserif:"Noto Serif SC","Songti SC",serif;
+  --gut:clamp(18px,4vw,56px);
+  --brand-b:#F8D3DE; --brand-i:#8E3550; --ecom-b:#FAD8BF; --ecom-i:#8A4A18; --cmi-b:#F7EBB8; --cmi-i:#665A0E; --trade-b:#DDEDC2; --trade-i:#4A6420;
+  --crm-b:#C9EDE0; --crm-i:#1F6650; --pr-b:#D6D6F7; --pr-i:#45448E; --media-b:#CBE3F7; --media-i:#245E8C; --digital-b:#EFD5F2; --digital-i:#74357F;
   --ins:#A8716A; --ins-bg:#F6EEEC; --prac:#9C7B5E; --prac-bg:#F5EFE9; --data:#7A6F66; --data-bg:#F1EFEC;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#161719; --surface:#1E1F22; --ink:#ECEAE4; --ink-2:#B4B0A7; --ink-3:#87847C; --line:#2F3034; --hover:#25262A;
-  --brand-b:#6B3A4A; --brand-i:#F8D3DE; --ecom-b:#6E4A30; --ecom-i:#FAD8BF; --cmi-b:#5E5426; --cmi-i:#F7EBB8;
-  --trade-b:#48582E; --trade-i:#DDEDC2; --crm-b:#285A4A; --crm-i:#C9EDE0; --pr-b:#3F3F72; --pr-i:#D6D6F7;
-  --media-b:#2F5170; --media-i:#CBE3F7; --digital-b:#5E3D68; --digital-i:#EFD5F2;
+  --bg:#141414; --panel:#1C1C1B; --surface:#191918; --ink:#EDEBE5; --ink-2:#B5B2AA; --ink-3:#85827B; --line:#33322F; --rule:#EDEBE5; --hover:#222220; --bezel:#3A3936; --rim:#55534F;
+  --brand-b:#6B3A4A; --brand-i:#F8D3DE; --ecom-b:#6E4A30; --ecom-i:#FAD8BF; --cmi-b:#5E5426; --cmi-i:#F7EBB8; --trade-b:#48582E; --trade-i:#DDEDC2;
+  --crm-b:#285A4A; --crm-i:#C9EDE0; --pr-b:#3F3F72; --pr-i:#D6D6F7; --media-b:#2F5170; --media-i:#CBE3F7; --digital-b:#5E3D68; --digital-i:#EFD5F2;
   --ins:#D9A49D; --ins-bg:#2B2120; --prac:#C9A585; --prac-bg:#2A231C; --data:#B4A99F; --data-bg:#24221F;
   color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#161719; --surface:#1E1F22; --ink:#ECEAE4; --ink-2:#B4B0A7; --ink-3:#87847C; --line:#2F3034; --hover:#25262A;
-  --brand-b:#6B3A4A; --brand-i:#F8D3DE; --ecom-b:#6E4A30; --ecom-i:#FAD8BF; --cmi-b:#5E5426; --cmi-i:#F7EBB8;
-  --trade-b:#48582E; --trade-i:#DDEDC2; --crm-b:#285A4A; --crm-i:#C9EDE0; --pr-b:#3F3F72; --pr-i:#D6D6F7;
-  --media-b:#2F5170; --media-i:#CBE3F7; --digital-b:#5E3D68; --digital-i:#EFD5F2;
+  --bg:#141414; --panel:#1C1C1B; --surface:#191918; --ink:#EDEBE5; --ink-2:#B5B2AA; --ink-3:#85827B; --line:#33322F; --rule:#EDEBE5; --hover:#222220; --bezel:#3A3936; --rim:#55534F;
+  --brand-b:#6B3A4A; --brand-i:#F8D3DE; --ecom-b:#6E4A30; --ecom-i:#FAD8BF; --cmi-b:#5E5426; --cmi-i:#F7EBB8; --trade-b:#48582E; --trade-i:#DDEDC2;
+  --crm-b:#285A4A; --crm-i:#C9EDE0; --pr-b:#3F3F72; --pr-i:#D6D6F7; --media-b:#2F5170; --media-i:#CBE3F7; --digital-b:#5E3D68; --digital-i:#EFD5F2;
   --ins:#D9A49D; --ins-bg:#2B2120; --prac:#C9A585; --prac-bg:#2A231C; --data:#B4A99F; --data-bg:#24221F;
   color-scheme:dark}
 .fn-brand{--b:var(--brand-b);--i:var(--brand-i)} .fn-ecom{--b:var(--ecom-b);--i:var(--ecom-i)} .fn-cmi{--b:var(--cmi-b);--i:var(--cmi-i)} .fn-trade{--b:var(--trade-b);--i:var(--trade-i)}
@@ -44,163 +38,256 @@
 .ab-ins{--a:var(--ins);--abg:var(--ins-bg)} .ab-prac{--a:var(--prac);--abg:var(--prac-bg)} .ab-data{--a:var(--data);--abg:var(--data-bg)}
 
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75;padding-inline:16px;padding-block:0}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font-family:var(--geo);font-size:15px;line-height:1.75;font-weight:400;overflow-x:clip}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:2px}
-.wrap{max-width:1080px;margin:0 auto}
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:0 16px}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;min-height:58px}
-.logo{font-family:var(--serif);font-weight:700;font-size:19px;text-decoration:none;letter-spacing:.04em}
-.logo small{font-family:var(--mono);font-weight:400;font-size:11px;color:var(--ink-3);letter-spacing:.06em;margin-left:8px}
-nav.main{display:flex;gap:4px}
-nav.main a,.subnav a{text-decoration:none;padding:6px 12px;border-radius:999px;color:var(--ink-2);font-size:14px}
-nav.main a:hover,.subnav a:hover{background:var(--hover)}
-nav.main a.on{background:var(--ink);color:var(--bg)}
-.subnav{display:flex;gap:4px;flex-wrap:wrap;padding-block:14px 0}
-.subnav a.on{color:var(--ink);background:var(--hover);font-weight:500}
-main{padding-block:28px 72px;min-height:70vh}
-h1,h2,h3{text-wrap:balance;margin:0}
-h1{font-family:var(--serif);font-size:clamp(26px,4vw,36px);line-height:1.3;font-weight:700}
-h2{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.4}
-h3{font-size:15px;font-weight:500}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:500}
 p{margin:0}
-.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase}
+.caps{font-family:var(--geo);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
 .muted{color:var(--ink-2)} .faint{color:var(--ink-3)}
 .stack{display:flex;flex-direction:column;gap:12px}
-.section{display:flex;flex-direction:column;gap:14px;margin-top:40px}
-.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px}
-.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr))}
-.grid-2{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.gut{padding-inline:var(--gut)}
 
-/* tags */
-.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;line-height:1;padding:5px 10px;border-radius:999px;background:var(--b);color:var(--i);text-decoration:none;white-space:nowrap}
-.chip:hover{filter:brightness(.97)}
-.ind{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
+/* ---------- 首页 ---------- */
+.home{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:100svh}
+.home-left{padding:clamp(40px,9vh,110px) clamp(20px,6vw,88px) 40px;display:flex;flex-direction:column;gap:30px;border-right:2px solid var(--rule)}
+.home-right{background:var(--panel);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:48px clamp(20px,4vw,60px);text-decoration:none;position:relative;overflow:hidden}
+.home .era{font-size:15px;letter-spacing:.14em;color:var(--ink-2);font-weight:400}
+.home .name{font-family:"Jost",sans-serif;font-weight:600;font-size:clamp(64px,9vw,128px);line-height:.92;letter-spacing:-.035em}
+.bigpills{display:flex;flex-wrap:wrap;gap:12px}
+.bigpill{border:2px solid var(--ink);border-radius:999px;padding:7px 20px;font-size:clamp(14px,1.4vw,18px);font-weight:500;letter-spacing:.12em}
+.bigpill.ghost{border-color:var(--ink-3);color:var(--ink-2)}
+.intro{max-width:560px;font-size:14.5px;line-height:1.8;color:var(--ink-2);font-weight:300}
+.index{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.index a{display:flex;align-items:baseline;gap:22px;text-decoration:none;padding:4px 0}
+.index .no{font-size:14px;color:var(--ink-3);letter-spacing:.06em;width:22px;font-variant-numeric:tabular-nums}
+.index .lb{font-size:clamp(28px,3.2vw,40px);font-weight:400;letter-spacing:-.01em;line-height:1.15;transition:transform .2s}
+.index .zh{font-size:14px;color:var(--ink-3)}
+.index a:hover .lb{transform:translateX(6px)}
+.homelinks{margin-top:auto;display:flex;flex-wrap:wrap;gap:12px 36px;font-size:14px;letter-spacing:.12em;color:var(--ink-3)}
+.homelinks span{cursor:default}
+.homelinks span::after{content:" ↗"}
+.logo-mark{font-family:"Jost",sans-serif;font-weight:600;font-size:clamp(44px,5.4vw,76px);letter-spacing:-.03em;line-height:.9;color:var(--i);text-align:center}
+.logo-mark small{display:block;font-size:.2em;letter-spacing:.3em;font-weight:500;color:var(--ink-2);margin-top:12px}
+
+/* ---------- 拼贴：倾斜的“屏幕”卡片 ---------- */
+.collage-art{position:relative;width:100%;height:var(--h,360px)}
+.tile{position:absolute;left:var(--x);top:var(--y);width:var(--w,190px);transform:rotate(var(--r,0deg));background:var(--surface);border-radius:12px;box-shadow:0 0 0 1px color-mix(in srgb,var(--ink) 6%,transparent),0 1px 2px rgba(0,0,0,.03),0 20px 44px -10px rgba(0,0,0,.13);overflow:hidden;display:flex;flex-direction:column}
+.tile .tbar{height:20px;background:var(--b);display:flex;align-items:center;gap:4px;padding:0 9px}
+.tile .tbar i{width:6px;height:6px;border-radius:50%;background:var(--i);opacity:.45}
+.tile .tin{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px}
+.tile .k{font-size:10.5px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;font-weight:500}
+.tile .v{font-family:"Jost",sans-serif;font-weight:600;font-size:26px;line-height:1.05;letter-spacing:-.02em}
+.tile .q{font-family:var(--zhserif);font-weight:600;font-size:14px;line-height:1.55}
+.tile .wm{font-family:"Jost",sans-serif;font-weight:600;font-size:25px;line-height:.95;letter-spacing:-.03em;color:var(--i)}
+.tile.phone{border-radius:24px;border:2.5px solid var(--bezel);box-shadow:0 2px 4px rgba(0,0,0,.05),0 24px 48px -12px rgba(0,0,0,.2)}
+.tile .chiprow{display:flex;flex-wrap:wrap;gap:4px}
+.tile .chiprow span{font-size:11px;border:1px solid var(--ink-3);border-radius:999px;padding:1px 8px}
+
+.tile .shot{aspect-ratio:4/5;background:var(--panel);display:grid;place-items:center;overflow:hidden}
+.tile .shot span{font-size:11px;letter-spacing:.2em;color:var(--ink-3)}
+.tile .shot img{width:100%;height:100%;object-fit:cover;display:block}
+/* 设备样机：照片放在 iPad / iPhone 里（参考网站的做法） */
+.dev{position:relative;background:var(--panel);border:3px solid var(--bezel);overflow:hidden;box-shadow:0 0 0 1.5px var(--rim),0 2px 4px rgba(0,0,0,.05),0 24px 48px -14px rgba(0,0,0,.22)}
+.dev img{width:100%;height:100%;object-fit:cover;display:block}
+.dev .scr{position:absolute;inset:0;display:grid;place-items:center;font-size:10px;letter-spacing:.22em;color:var(--ink-3)}
+.dev.ipad{border-radius:15px;aspect-ratio:4/3;border-width:6px}
+.dev.iphone{border-radius:26px;aspect-ratio:9/19}
+.dev.iphone::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:30%;height:9px;border-radius:8px;background:var(--bezel);z-index:1}
+.collage-art .dev{position:absolute;left:var(--x);top:var(--y);width:var(--w);transform:rotate(var(--r,0deg))}
+.devs{position:relative;width:100%;aspect-ratio:2.15/1}
+.devs .dev{position:absolute}
+.mascot{width:56px;height:56px;display:inline-block;flex:none;transition:transform .3s}
+.mascot svg{width:100%;height:100%;overflow:visible}
+.cell:hover .mascot{transform:rotate(-8deg) scale(1.08)}
+/* ---------- 内页外壳 ---------- */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--bg);border-bottom:1px solid var(--rule)}
+.top .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;min-height:64px;padding:0 var(--gut)}
+.top a{text-decoration:none}
+.top nav{display:flex;gap:4px 28px;flex-wrap:wrap}
+.top nav a{padding:4px 0;border-bottom:1px solid transparent;color:var(--ink-2)}
+.top nav a.on,.top nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+main{padding-block:0 0;min-height:70vh}
+.pagehead{display:flex;flex-direction:column;gap:12px;padding:52px var(--gut) 40px}
+.pagehead .caps{color:var(--ink-3)}
+.giant{font-family:var(--serif);font-weight:500;font-size:clamp(46px,7.4vw,104px);line-height:.98;letter-spacing:-.035em}
+.giant.zh{font-family:var(--zhserif);font-weight:700;letter-spacing:-.01em;font-size:clamp(34px,5vw,64px);line-height:1.15}
+.subzh{font-family:var(--zhserif);font-weight:600;font-size:clamp(17px,1.8vw,22px);color:var(--ink-2)}
+.lede{max-width:62ch;color:var(--ink-2)}
+h2{font-family:var(--zhserif);font-size:21px;font-weight:600;line-height:1.4}
+h3{font-size:15px;font-weight:500}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--ink);border-radius:999px;padding:5px 15px;font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;white-space:nowrap;background:transparent;color:var(--ink);font-family:var(--geo);cursor:pointer;line-height:1.4}
+a.pill:hover,button.pill:hover,.cell:hover .pill.view{background:var(--ink);color:var(--bg)}
+.pill.on{background:var(--ink);color:var(--bg)}
+.pill.zh{letter-spacing:.06em;font-size:13px;text-transform:none}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--b);box-shadow:0 0 0 1px var(--i) inset}
+.section{display:flex;flex-direction:column;gap:14px;margin-top:48px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--rule);padding-bottom:10px}
+.count{font-size:12px;color:var(--ink-3);letter-spacing:.1em;font-variant-numeric:tabular-nums}
+.grid-2{display:grid;gap:22px 48px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.chip{display:inline-flex;align-items:center;font-size:12.5px;line-height:1;padding:6px 11px;border-radius:999px;background:var(--b);color:var(--i);text-decoration:none;white-space:nowrap}
+.ind{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--ink-2);white-space:nowrap}
 .ind svg{width:15px;height:15px;flex:none}
 .cpt{font-size:13px;text-decoration:none;color:var(--ink-2);white-space:nowrap}
 .cpt b{font-weight:400;color:var(--ink-3);margin-right:1px}
 .cpt:hover{color:var(--ink)}
-.brandtxt{font-size:13px;color:var(--ink)}
 .tags{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
-.band{display:flex;height:6px}
-.band span{flex:1;background:var(--b)}
+.empty-note{border:1.5px dashed var(--line);padding:18px 20px;color:var(--ink-3);font-size:14px}
 
-/* cards */
-.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
-a.card:hover{border-color:var(--ink-3);transform:translateY(-1px)}
-.card .in{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.card.empty{border-style:dashed;background:transparent;justify-content:center}
-.fn-tile{border-top:6px solid var(--b)}
-.fn-tile .in{gap:6px}
-.fn-tile .en{font-family:var(--mono);font-size:11px;color:var(--i);letter-spacing:.04em}
-.count{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
-.row{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none}
-.row:hover .rt{text-decoration:underline;text-underline-offset:3px}
+/* ---------- 通栏黑线网格（参考 SELECTED WORK） ---------- */
+.xgrid{display:grid;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));border-top:1px solid var(--rule)}
+.cell{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:18px;padding:26px 30px 28px;text-decoration:none;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);min-width:0;transition:background .2s}
+.xgrid .cell:nth-child(var(--cols,2)n){border-right:none}
+.xgrid.c2 .cell:nth-child(2n){border-right:none}
+.xgrid.c4 .cell:nth-child(4n){border-right:none}
+a.cell:hover{background:var(--hover)}
+.cell .head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.cell .yr{font-size:22px;font-weight:600;letter-spacing:.06em}
+.cell .vis{flex:1;display:flex;align-items:center;justify-content:center;min-height:var(--vh,360px)}
+.cell .title{font-size:clamp(15px,1.3vw,18px);font-weight:500;letter-spacing:.06em;text-transform:uppercase;line-height:1.35}
+.cell .title .zh{display:block;text-transform:none;letter-spacing:.02em;font-family:var(--zhserif);font-weight:600;font-size:15px;color:var(--ink-2);margin-top:4px}
+.cell .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.cell.blank{justify-content:center;align-items:center;color:var(--ink-3)}
+.fnno{font-family:var(--serif);font-size:56px;line-height:1;color:var(--i)}
+.fnname{font-family:var(--zhserif);font-size:24px;font-weight:700}
+
+/* 列表行 */
+.rows{border-top:1px solid var(--rule)}
+.row{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:16px var(--gut);border-bottom:1px solid var(--line);text-decoration:none}
+.row:hover{background:var(--hover)}
 .row .rt{min-width:0}
-.list-plain{display:flex;flex-direction:column}
-.filters{display:flex;flex-direction:column;gap:10px}
-.fgroup{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.fgroup .lab{font-size:12px;color:var(--ink-3);width:40px}
-button.f{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);padding:4px 11px;border-radius:999px;cursor:pointer}
-button.f:hover{border-color:var(--ink-3)}
-button.f.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-button.f.fnb.on{background:var(--b);color:var(--i);border-color:var(--b)}
-.empty-note{border:1px dashed var(--line);border-radius:10px;padding:16px 18px;color:var(--ink-3);font-size:14px}
-
-/* home */
-.hero{display:flex;flex-direction:column;gap:12px;max-width:640px;padding-block:12px 8px}
-.wing{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:14px}
-.wing h2 a{text-decoration:none}
-.wing .big{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
-.legend{display:grid;gap:10px 22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
-.legend div{display:flex;flex-direction:column;gap:6px;font-size:13px}
-.abkey{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--a)}
-.abkey i{width:10px;height:10px;background:var(--a);display:inline-block;border-radius:2px}
-
-/* detail pages */
-.detail-head{display:flex;flex-direction:column;gap:12px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.row .rt .t{font-size:16px}
+.inrows .row{padding-inline:0}
+.inrows .row:hover{background:transparent}
+.inrows .row:hover .rt{text-decoration:underline;text-underline-offset:3px}
+.metrics{display:flex;flex-wrap:wrap;gap:8px}
+.metric{font-size:13px;border:1px solid var(--ink-3);border-radius:999px;padding:4px 12px}
 .prose{max-width:66ch;display:flex;flex-direction:column;gap:14px}
 .prose ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
-.kv{display:grid;grid-template-columns:88px 1fr;gap:8px 16px;font-size:14px}
-.kv dt{color:var(--ink-3)} .kv dd{margin:0;min-width:0}
-.metrics{display:flex;flex-wrap:wrap;gap:8px}
-.metric{font-size:13px;border:1px solid var(--line);border-radius:6px;padding:4px 10px;background:var(--surface)}
 
-/* case */
-.case{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:48px;align-items:start}
-.case aside{position:sticky;top:84px;display:flex;flex-direction:column;gap:22px;font-size:13.5px}
-.case aside h3{font-size:12px;color:var(--ink-3);font-weight:500;margin-bottom:6px}
+/* 信息表 */
+.meta{display:flex;flex-direction:column;margin:0}
+.meta>div{display:grid;grid-template-columns:140px minmax(0,1fr);gap:18px;padding:18px 0;border-bottom:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}
+.meta>div:first-child{padding-top:4px}
+.meta dt{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:500;padding-top:3px}
+.meta dd{margin:0;min-width:0;font-size:15px;line-height:1.7}
+
+/* 案例页 */
+.minibar{position:sticky;top:calc(64px + env(safe-area-inset-top,0px));z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:10px var(--gut);display:flex;align-items:center;gap:16px;flex-wrap:wrap;transform:translateY(-6px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;margin-bottom:-56px;min-height:56px}
+.minibar.show{opacity:1;transform:none;pointer-events:auto}
+.minibar .mt{font-family:var(--serif);font-size:22px;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw}
+.hero{background:var(--panel);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);overflow:hidden}
+.tinted{background:color-mix(in srgb,var(--b) 30%,var(--bg))}
+.casemeta{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(28px,5vw,80px);align-items:start;padding:64px var(--gut)}
+.posterart{aspect-ratio:4/3;background:var(--b);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:clamp(20px,3vw,40px);gap:10px}
+.posterart .big{font-family:"Jost",sans-serif;font-weight:700;font-size:clamp(26px,3.4vw,46px);line-height:1;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink);max-width:12ch}
+.posterart .hand{font-family:"Caveat",cursive;font-size:clamp(26px,3vw,38px);color:var(--i);transform:rotate(-6deg);position:absolute;left:clamp(16px,3vw,36px);top:clamp(12px,2.4vw,28px)}
+.posterart .tagline{position:absolute;right:16px;top:14px;font-size:10px;letter-spacing:.18em;font-weight:500;text-align:right}
+.posterart .wmk{position:absolute;right:-10px;bottom:-14px;font-family:"Jost",sans-serif;font-weight:700;font-size:clamp(60px,9vw,120px);letter-spacing:-.05em;color:color-mix(in srgb,var(--i) 22%,transparent);line-height:.8}
+.case{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:56px;align-items:start;padding:56px var(--gut) 80px;border-top:1px solid var(--rule)}
+.case aside{position:sticky;top:140px;display:flex;flex-direction:column;gap:24px;font-size:13.5px}
+.case aside h3{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:8px}
 .toc a{display:block;text-decoration:none;color:var(--ink-2);padding:3px 0}
 .toc a:hover{color:var(--ink)}
-.tldr{font-family:var(--serif);font-size:18px;line-height:1.7;border-left:3px solid var(--ink);padding:2px 0 2px 16px}
 .abbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.abbtn{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:999px;border:1px solid var(--a);color:var(--a);background:transparent;cursor:pointer}
+.abbtn{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:999px;border:1px solid var(--a);color:var(--a);background:transparent;cursor:pointer}
 .abbtn i{width:9px;height:9px;border-radius:2px;background:var(--a)}
 .abbtn.on{background:var(--a);color:var(--bg)} .abbtn.on i{background:var(--bg)}
-.abbtn span{font-family:var(--mono);font-size:11px;opacity:.85}
-.csec{display:flex;flex-direction:column;gap:14px;scroll-margin-top:90px}
-.csec h2{font-size:20px}
+.abbtn span{font-size:11px;opacity:.85}
+.csec{display:flex;flex-direction:column;gap:14px;scroll-margin-top:140px}
+.csec h2{font-size:22px}
 .blk{max-width:68ch}
 .blk.ab{background:var(--abg);border-left:3px solid var(--a);padding:12px 16px 13px}
-.blk.ab .ablab{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--a);display:block;margin-bottom:3px}
-.blk ul{margin:0;padding-left:1.2em}
+.blk.ab .ablab{font-size:10.5px;letter-spacing:.14em;color:var(--a);display:block;margin-bottom:3px;font-weight:500}
 .blk table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
 .blk th,.blk td{text-align:left;padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
 .blk th{font-weight:500;color:var(--ink-3);font-size:12px}
 .tablewrap{overflow-x:auto}
 article.focus .blk{transition:opacity .2s}
 article.focus-ins .blk:not(.ab-ins),article.focus-prac .blk:not(.ab-prac),article.focus-data .blk:not(.ab-data){opacity:.28}
-.draft{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;border:1px solid var(--ink-3);color:var(--ink-3);border-radius:4px;padding:1px 6px;margin-left:8px;vertical-align:middle}
-sup a{font-family:var(--mono);font-size:10.5px;text-decoration:none;color:var(--ink-3);padding-left:1px}
+.draft{display:inline-block;font-size:10.5px;letter-spacing:.1em;border:1px solid var(--ink-3);color:var(--ink-3);border-radius:999px;padding:1px 8px;margin-left:10px;vertical-align:middle;font-family:var(--geo);font-weight:500}
+sup a{font-size:10.5px;text-decoration:none;color:var(--ink-3);padding-left:1px}
 .inl{text-decoration:underline dotted var(--ink-3);text-underline-offset:4px}
 .inl b{font-weight:400;color:var(--ink-3)}
 .refs{display:flex;flex-direction:column;gap:6px;font-size:13.5px;padding-left:0;list-style:none;counter-reset:r;margin:0}
 .refs li{counter-increment:r;display:flex;gap:10px}
-.refs li::before{content:"[" counter(r) "]";font-family:var(--mono);font-size:11.5px;color:var(--ink-3);padding-top:2px;min-width:24px}
-footer{border-top:1px solid var(--line);padding-block:20px 28px;font-size:12px;color:var(--ink-3);font-family:var(--mono);margin-inline:-16px;padding-inline:16px}
-/* case 检索 */
-.search{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px 20px;display:flex;flex-direction:column;gap:16px}
-.search input[type=search]{font:inherit;font-size:15px;width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
-.search input[type=search]:focus{outline:none;border-color:var(--ink-3)}
+.refs li::before{content:"[" counter(r) "]";font-size:12px;color:var(--ink-3);padding-top:1px;min-width:26px}
+.brandbtn{font:inherit;font-size:15px;background:none;border:none;padding:0;color:var(--ink);cursor:pointer;text-decoration:underline;text-decoration-color:var(--ink-3);text-underline-offset:4px}
+
+/* 检索 */
+.search{border-top:1px solid var(--rule);padding:22px var(--gut) 26px;display:flex;flex-direction:column;gap:16px}
+.search input[type=search]{font:inherit;font-size:16px;width:100%;padding:10px 0;border:none;border-bottom:1px solid var(--rule);background:transparent;color:var(--ink)}
+.search input[type=search]:focus{outline:none}
 .selbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:30px}
 .selbar .hint{font-size:13px;color:var(--ink-3)}
-.sel{font:inherit;font-size:12.5px;display:inline-flex;align-items:center;gap:6px;padding:4px 6px 4px 11px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
+.sel{font:inherit;font-size:12.5px;display:inline-flex;align-items:center;gap:6px;padding:4px 6px 4px 12px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
 .sel.fnsel{background:var(--b);color:var(--i);border-color:var(--b)}
 .sel .x{font-size:14px;line-height:1;opacity:.75;padding:0 4px}
 .linkbtn{font:inherit;font-size:12.5px;background:none;border:none;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:2px 4px}
-.mode{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-left:auto}
-.mode button{font:inherit;font-size:12px;border:none;background:transparent;color:var(--ink-2);padding:4px 11px;cursor:pointer}
-.mode button.on{background:var(--hover);color:var(--ink);font-weight:500}
-.ogroup{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;align-items:start}
-.ogroup .lab{font-size:12px;color:var(--ink-3);padding-top:5px}
+.mode{display:inline-flex;border:1px solid var(--ink);border-radius:999px;overflow:hidden;margin-left:auto}
+.mode button{font:inherit;font-size:12px;border:none;background:transparent;color:var(--ink-2);padding:4px 12px;cursor:pointer}
+.mode button.on{background:var(--ink);color:var(--bg)}
+.ogroup{display:grid;grid-template-columns:58px minmax(0,1fr);gap:10px;align-items:start}
+.ogroup .lab{font-size:11px;letter-spacing:.16em;color:var(--ink-3);padding-top:6px;font-weight:500}
 .opts{display:flex;flex-wrap:wrap;gap:6px}
-.opt{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink-2);padding:4px 11px;border-radius:999px;cursor:pointer}
-.opt:hover{border-color:var(--ink-3);color:var(--ink)}
-.opt .n{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.opt{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--ink-3);background:transparent;color:var(--ink-2);padding:4px 12px;border-radius:999px;cursor:pointer}
+.opt:hover{border-color:var(--ink);color:var(--ink)}
+.opt .n{font-size:11px;color:var(--ink-3)}
 .opt.on{background:var(--ink);color:var(--bg);border-color:var(--ink)} .opt.on .n{color:var(--bg);opacity:.7}
 .opt.fo .dot{width:8px;height:8px;border-radius:50%;background:var(--b);box-shadow:0 0 0 1px var(--i) inset}
 .opt.fo.on{background:var(--b);color:var(--i);border-color:var(--i)} .opt.fo.on .n{color:var(--i)}
 .opt.cp b{font-weight:400;color:var(--ink-3)} .opt.cp.on b{color:var(--bg)}
 .opt svg{width:14px;height:14px}
-.resultbar{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:26px;border-bottom:1px solid var(--line);padding-bottom:10px}
-.brandbtn{font:inherit;font-size:13px;background:none;border:none;padding:0;color:var(--ink);cursor:pointer;text-decoration:underline dotted var(--ink-3);text-underline-offset:4px}
-.brandbtn:hover{text-decoration-style:solid}
-@media (max-width:860px){.case{grid-template-columns:minmax(0,1fr)} .case aside{position:static;order:-1;border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--surface)} .case aside .toc{display:flex;flex-wrap:wrap;gap:4px 14px}}
+.resultbar{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:16px var(--gut);border-top:1px solid var(--rule)}
+.resultbar h2{font-family:var(--geo);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+
+/* Off the Clock 手帐 */
+.polaroid{position:relative;margin:0;background:var(--surface);padding:10px 10px 12px;box-shadow:0 1px 0 var(--line),0 10px 24px rgba(0,0,0,.08);transform:rotate(var(--r,0deg));width:var(--pw,200px)}
+.polaroid .shot{aspect-ratio:4/5;background:var(--panel);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
+.polaroid .shot span{font-size:11px;letter-spacing:.2em;color:var(--ink-3)}
+.polaroid .shot img{width:100%;height:100%;object-fit:cover;display:block}
+.polaroid figcaption{font-family:"Caveat",cursive;font-size:19px;line-height:1.2;padding-top:8px;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.polaroid .tape{position:absolute;top:-11px;left:50%;width:44%;height:22px;background:var(--b);opacity:.85;transform:translateX(-50%) rotate(-4deg)}
+.stamp{position:absolute;width:70px;height:70px;border-radius:50%;border:1.5px dashed var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(var(--r,8deg));background:var(--bg);line-height:1.1;z-index:2}
+.stamp b{font-size:14px;letter-spacing:.12em;font-weight:600}
+.stamp i{font-style:normal;font-size:8.5px;letter-spacing:.06em;color:var(--ink-2);max-width:58px;text-align:center}
+.pstack{position:relative;width:min(100%,360px);height:300px}
+.pstack .polaroid{position:absolute}
+.journal{font-family:var(--zhserif);font-size:16px;line-height:1.95;max-width:62ch}
+.hobbyicon{width:120px;height:120px;color:var(--ink)}
+.placeholder{color:var(--ink-3);border-bottom:1px dashed var(--ink-3)}
+
+footer.foot{border-top:1px solid var(--rule);padding:22px var(--gut) 30px;font-size:12px;color:var(--ink-3);letter-spacing:.12em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .home{grid-template-columns:minmax(0,1fr)}
+  .home-left{border-right:none;border-bottom:1px solid var(--rule)}
+  .casemeta{grid-template-columns:minmax(0,1fr)}
+  .case{grid-template-columns:minmax(0,1fr)}
+  .case aside{position:static;order:-1;border:1px solid var(--rule);padding:16px}
+  .case aside .toc{display:flex;flex-wrap:wrap;gap:4px 14px}
+  .meta>div{grid-template-columns:minmax(0,1fr);gap:4px}
+  .xgrid.c4{--cols:2}
+  .xgrid.c4 .cell:nth-child(4n){border-right:1px solid var(--rule)}
+  .xgrid.c4 .cell:nth-child(2n){border-right:none}
+}
+@media (max-width:640px){
+  .xgrid,.xgrid.c4{--cols:1}
+  .xgrid .cell,.xgrid.c4 .cell:nth-child(4n){border-right:none}
+  .cell{padding:22px 18px}
+  .collage-art{transform:scale(.82);transform-origin:center}
+  .hero .collage-art .tile:nth-child(n+5),
+  .cell .collage-art .tile:nth-child(n+4),.home-right .collage-art .tile:nth-child(n+4){display:none}
+  .minibar .mt{max-width:70vw}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
 </head>
 <body>
-<header class="top"><div class="wrap">
-  <a class="logo" href="#home">营销手记<small>XINYU HAN</small></a>
-  <nav class="main" aria-label="主导航">
-    <a href="#home" data-nav="home">首页</a>
-    <a href="#notes" data-nav="notes">学习笔记</a>
-    <a href="#works" data-nav="works">作品集</a>
-  </nav>
-</div></header>
-<div class="wrap"><main id="app"></main></div>
-<footer><div class="wrap">Xinyu Han · 营销手记 · 新增内容只需在文件顶部的数据里添加一条，交叉链接会自动生成</div></footer>
+<div id="root"></div>
 
 <script>
 /* ================= 数据：以后只改这里 ================= */
@@ -317,6 +404,12 @@ const WORKS = [
    industry:'sport', fns:['brand','trade','pr'], date:'2026-10-04',
    concepts:['incremental','cobrand','assortment','popup','celebrity','localization','expectation','positioning','seeding'],
    resources:['r-daofa','r-huxiu','r-yicai','r-lanjing','r-shidai'],
+   en:'NikeSKIMS in China: Can Kim K Fix Nike’s Women’s Problem?',
+   keywords:['Market Entry','Co-branding','Pop-up Retail','Celebrity','Women’s Activewear'],
+   hand:'Strong & Sculpted?', poster:'From shapewear to sportswear',
+   highlights:[{k:'Price range · CN',v:'¥349–1099'},{k:'Nike Greater China FY26',v:'−11.2%'},{k:'SKIMS valuation',v:'$5B'},{k:'Pop-up run',v:'5 months'}],
+   quote:'增量人群要的是好看、好搭，而不是为赢而设计',
+   tools:['公开报道与财经媒体','行业公众号','海外社区用户反馈'], role:'独立分析与撰写',
    summary:'耐克第一次和外部公司共创新品牌，借 SKIMS 的女性身体审美切入“日常穿搭型”女性运动市场。',
    tldr:'NikeSKIMS 的价值不在于再造一个乔丹，而在于让耐克低成本测试它一直没抓住的“日常穿搭型”女性用户。在中国，关键是把 SKIMS 张扬的身体审美翻译成本土语境。',
    sections:[
@@ -356,152 +449,198 @@ const WORKS = [
    ]}
 ];
 
+
+/* ===== Off the Clock：旅行手帐 + 爱好（“xxx” 都是待你补充的占位） =====
+   photos：以后放照片文件名，例如 ['japan-01.jpg']；没有照片时显示占位相框
+   tape：胶带颜色，用职能色的名字（brand / digital / ecom / media / crm / cmi / trade / pr） */
+const TRIPS = [
+  {id:'japan', code:'JPN', place:'Japan', zh:'日本', when:'xxxx', stay:'约一个月', tape:'brand', rot:-4,
+   mood:'xxx', photos:[], caption:'xxx',
+   journal:['xxx（写下这段旅行里印象最深的一天）'],
+   observe:['xxx（一个让你停下脚步的门店、包装或广告，它为什么打动你）'], concepts:['localization']},
+  {id:'singapore', code:'SGP', place:'Singapore', zh:'新加坡', when:'xxxx', stay:'约一个月', tape:'media', rot:3,
+   mood:'xxx', photos:[], caption:'xxx',
+   journal:['xxx'], observe:['xxx'], concepts:[]},
+  {id:'rwanda', code:'RWA', place:'Rwanda', zh:'卢旺达', when:'2026.03 – 04', stay:'田野调研', tape:'cmi', rot:-2,
+   mood:'xxx', photos:[], caption:'xxx',
+   journal:['xxx'], observe:['xxx'], concepts:[]},
+  {id:'uk', code:'GBR', place:'United Kingdom', zh:'英国', when:'xxxx', stay:'xxx', tape:'trade', rot:5,
+   mood:'xxx', photos:[], caption:'xxx',
+   journal:['xxx'], observe:['xxx'], concepts:[]}
+];
+const HOBBIES = [
+  {id:'cello', en:'Cello', zh:'大提琴', since:'xxxx', note:'xxx（学了多久、最喜欢的曲子、现在的练习节奏）', icon:'<path d="M32 6v10M28 16h8l2 10-4 4 6 8-4 14H26l-4-14 6-8-4-4z"/><path d="M29 36h6M30 42h4"/><path d="M32 52v6"/>'},
+  {id:'tennis', en:'Tennis', zh:'网球', since:'xxxx', note:'xxx（打球的频率、最难忘的一场、想练好的技术）', icon:'<circle cx="32" cy="32" r="22"/><path d="M14 20c10 6 10 18 0 24M50 20c-10 6-10 18 0 24"/>'}
+];
+
 /* ================= 渲染 ================= */
 const $ = s=>document.querySelector(s);
-const app = $('#app');
+const root = $('#root');
+let app = null;
 const fnOf = id=>FUNCTIONS.find(f=>f.id===id);
 const cOf = id=>CONCEPTS.find(c=>c.id===id);
 const rOf = id=>RESOURCES.find(r=>r.id===id);
 const wOf = id=>WORKS.find(w=>w.id===id);
-const byDate = (a,b)=>(b.date||'').localeCompare(a.date||'');   /* 新 → 旧，无日期的排最后 */
+const tOf = id=>TRIPS.find(t=>t.id===id);
+const byDate = (a,b)=>(b.date||'').localeCompare(a.date||'');
 const sortD = arr=>[...arr].sort(byDate);
 const WORKS_SORTED = ()=>sortD(WORKS);
+const yearOf = d=>(d||'').slice(0,4);
+const TYPE_EN = {'品牌拆解':'Brand Teardown','Case 分析':'Case Study','AI 实操':'AI Lab','数据分析':'Data Analysis'};
 
 const chip = id=>{const f=fnOf(id);return `<a class="chip fn-${id}" href="#fn-${id}">${f.name}</a>`};
+const fnPill = id=>`<span class="pill zh fn-${id}"><span class="dot"></span>${fnOf(id).name}</span>`;
 const indIcon = id=>`<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true">${INDUSTRIES[id].icon}</svg>`;
 const ind = id=>`<span class="ind">${indIcon(id)}${INDUSTRIES[id].name}</span>`;
 const cpt = id=>{const c=cOf(id);return `<a class="cpt" href="#c-${id}"><b>#</b>${c.name}</a>`};
-const band = fns=>`<div class="band">${fns.map(f=>`<span class="fn-${f}"></span>`).join('')}</div>`;
 const worksUsingConcept = cid=>sortD(WORKS.filter(w=>w.concepts.includes(cid)));
 const worksCiting = rid=>sortD(WORKS.filter(w=>w.resources.includes(rid)));
 const conceptsFrom = rid=>CONCEPTS.filter(c=>c.from.includes(rid));
 const empty = t=>`<div class="empty-note">${t}</div>`;
 const brandBtns = w=>w.brands.map(b=>`<button class="brandbtn" data-brand="${b}" title="检索 ${b} 的所有作品">${b}</button>`).join('<span class="faint"> · </span>');
 
-function workCard(w){
-  return `<a class="card" href="#w-${w.id}">${band(w.fns)}<div class="in">
-    <div class="eyebrow">${w.type} · ${w.date}</div>
-    <h3 style="font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.5">${w.title}</h3>
-    <p class="muted" style="font-size:13.5px">${w.summary}</p>
-    <div class="tags"><span class="brandtxt">${w.brands.join(' · ')}</span>${ind(w.industry)}</div>
-    <div class="tags">${w.fns.map(f=>`<span class="chip fn-${f}">${fnOf(f).name}</span>`).join('')}</div>
-    <div class="tags">${w.concepts.slice(0,4).map(c=>`<span class="cpt"><b>#</b>${cOf(c).name}</span>`).join('')}${w.concepts.length>4?`<span class="faint" style="font-size:12px">+${w.concepts.length-4}</span>`:''}</div>
-  </div></a>`;
+/* ---------- 拼贴：用作品里的真实内容做成倾斜的“屏幕”卡片 ---------- */
+function tilesFor(w){
+  const T=[];
+  T.push({kind:'brand', fn:w.fns[0]});
+  (w.highlights||[]).forEach((h,i)=>T.push({kind:'stat',k:h.k,v:h.v,fn:w.fns[(i+1)%w.fns.length]}));
+  if(w.quote) T.push({kind:'quote',q:w.quote,fn:w.fns[w.fns.length-1]});
+  T.push({kind:'concepts',fn:w.fns[0]});
+  return T;
+}
+function tileHTML(w,t,pos){
+  const st=`--x:${pos[0]}%;--y:${pos[1]}%;--w:${pos[2]}px;--r:${pos[3]}deg`;
+  const bar=`<div class="tbar"><i></i><i></i><i></i></div>`;
+  if(t.kind==='brand') return `<div class="tile phone fn-${t.fn}" style="${st}">${bar}<div class="tin" style="gap:10px;padding-block:18px"><span class="wm">${w.brands[0]}</span><span class="k">${TYPE_EN[w.type]}</span><div class="chiprow">${w.fns.map(f=>`<span>${fnOf(f).name}</span>`).join('')}</div></div></div>`;
+  if(t.kind==='stat') return `<div class="tile fn-${t.fn}" style="${st}">${bar}<div class="tin"><span class="k">${t.k}</span><span class="v">${t.v}</span></div></div>`;
+  if(t.kind==='quote') return `<div class="tile fn-${t.fn}" style="${st}">${bar}<div class="tin"><span class="k">Insight</span><span class="q">“${t.q}”</span></div></div>`;
+  return `<div class="tile fn-${t.fn}" style="${st}">${bar}<div class="tin"><span class="k">Concepts</span><div class="chiprow">${w.concepts.slice(0,5).map(c=>`<span>#${cOf(c).name}</span>`).join('')}</div></div></div>`;
+}
+const POS_CARD=[[2,8,178,-7],[30,56,185,4],[58,6,200,-3],[62,58,180,6],[33,4,170,-4]];
+const POS_HERO=[[3,10,170,-6],[16,46,190,4],[30,6,230,-3],[45,40,200,5],[58,4,220,-4],[70,44,240,3],[84,12,190,7]];
+function collage(w,pos,h){
+  const T=tilesFor(w);
+  return `<div class="collage-art" style="--h:${h}px">${T.slice(0,pos.length).map((t,i)=>tileHTML(w,t,pos[i])).join('')}</div>`;
+}
+
+/* ---------- 共用片段 ---------- */
+function head(cap, title, sub, lede, zh){
+  return `<div class="pagehead"><span class="caps">${cap}</span><h1 class="giant ${zh?'zh':''}">${title}</h1>${sub?`<div class="subzh">${sub}</div>`:''}${lede?`<p class="lede">${lede}</p>`:''}</div>`;
+}
+function notesHead(on, cap, title, sub){
+  return head(cap||'学习笔记 · Learning', title||'Marketing Notes', sub||'', on==='notes'&&!cap?'知识输入：职能分支、概念词典和资料库，三者互相链接，也连到作品集里用到它们的案例。':'')+
+   `<div class="gut pills" style="margin:-14px 0 34px">${[['notes','职能分支'],['concepts','概念词典'],['library','资料库']].map(([h,t])=>`<a href="#${h}" class="pill zh ${on===h?'on':''}">${t}</a>`).join('')}</div>`;
+}
+function workCell(w){
+  return `<a class="cell" href="#w-${w.id}">
+    <div class="head"><span class="pill">${TYPE_EN[w.type]}</span><span class="yr">${yearOf(w.date)}</span></div>
+    <div class="vis" style="--vh:330px">${collage(w,POS_CARD,320)}</div>
+    <div class="title">${w.en||w.title}<span class="zh">${w.title}</span></div>
+    <div class="foot"><div class="pills">${w.fns.map(fnPill).join('')}</div><span class="pill view">View</span></div></a>`;
 }
 function resRow(r){
-  return `<a class="row" href="#r-${r.id.slice(2)}"><div class="rt"><div>${r.title}</div><div class="faint" style="font-size:12.5px">${r.source}${r.date?' · '+r.date:''}</div></div><span class="count">${r.type} · ${r.status}</span></a>`;
+  return `<a class="row" href="#r-${r.id.slice(2)}"><div class="rt"><div class="t">${r.title}</div><div class="faint" style="font-size:12.5px">${r.source}${r.date?' · '+r.date:''}</div></div><span class="count">${r.type} · ${r.status}</span></a>`;
 }
 function conceptRow(c){
   const n=worksUsingConcept(c.id).length, m=c.from.length;
-  return `<a class="row" href="#c-${c.id}"><div class="rt"><div><span class="faint">#</span>${c.name} <span class="faint" style="font-family:var(--mono);font-size:11.5px">${c.en}</span></div></div><span class="count">学自 ${m} · 用于 ${n}</span></a>`;
-}
-function subnav(on){
-  return `<div class="subnav">${[['notes','职能分支'],['concepts','概念词典'],['library','资料库']].map(([h,t])=>`<a href="#${h}" class="${on===h?'on':''}">${t}</a>`).join('')}</div>`;
+  return `<a class="row" href="#c-${c.id}"><div class="rt"><div class="t"><span class="faint">#</span>${c.name} <span class="faint" style="font-size:12px;letter-spacing:.06em">${c.en}</span></div></div><span class="count">学自 ${m} · 用于 ${n}</span></a>`;
 }
 
-/* 首页 */
+/* ===== 首页 ===== */
 function home(){
-  const ws=WORKS_SORTED();
-  return `<section class="hero"><div class="eyebrow">Marketing notebook · since 2026.10</div>
-    <h1>从零系统学习 marketing 的手记</h1>
-    <p class="muted">左边记知识，右边做案例。每篇案例都标注用到了哪些概念、引用了哪些资料；每个概念也能看到它被用在了哪里。</p></section>
-  <div class="grid-2" style="margin-top:26px">
-    <div class="wing"><div class="eyebrow">左 · 输入</div><h2><a href="#notes">学习笔记</a></h2>
-      <p class="big">${FUNCTIONS.length} 个职能分支 · ${CONCEPTS.length} 个概念 · ${RESOURCES.length} 份资料</p>
-      <div class="tags">${FUNCTIONS.map(f=>chip(f.id)).join('')}</div>
-      <div class="tags" style="gap:8px 16px"><a class="cpt" href="#concepts">概念词典 →</a><a class="cpt" href="#library">资料库 →</a></div></div>
-    <div class="wing"><div class="eyebrow">右 · 输出</div><h2><a href="#works">作品集</a></h2>
-      <p class="big">${WORKS.length} 篇作品 · 品牌拆解 / Case 分析 / AI 实操 / 数据分析</p>
-      ${ws.slice(0,3).map(w=>`<a class="row" href="#w-${w.id}" style="padding-top:4px"><div class="rt">${w.title}</div><span class="count">${w.date}</span></a>`).join('')}
-      <a class="cpt" href="#works">按标签检索作品 →</a></div>
-  </div>
-  <div class="section"><div class="section-head"><h2>标签怎么读</h2></div>
-    <div class="legend">
-      <div><span class="faint">职能 → 颜色</span><div class="tags">${chip('brand')}${chip('digital')}</div></div>
-      <div><span class="faint">行业 → 图标</span><div class="tags">${ind('sport')}${ind('beauty')}${ind('luxury')}${ind('fmcg')}</div></div>
-      <div><span class="faint">概念 → #话题</span><div class="tags">${cpt('incremental')}${cpt('positioning')}</div></div>
-      <div><span class="faint">品牌 → 文字</span><div class="tags"><span class="brandtxt">NikeSKIMS</span></div></div>
-      <div><span class="faint">能力 → 正文段落色块</span><div class="tags">${Object.entries(ABILITIES).map(([k,v])=>`<span class="abkey ab-${k}"><i></i>${v}</span>`).join('')}</div></div>
-    </div></div>`;
+  const f=WORKS_SORTED()[0];
+  const idx=[['about','About me','关于我'],['notes','Marketing Notes','学习笔记'],['works','Portfolio','作品集'],['life','Off the Clock','旅行观察与爱好']];
+  return `<div class="home">
+    <section class="home-left">
+      <span class="era">Notebook &amp; Portfolio 2026 –</span>
+      <h1 class="name">Hannah</h1>
+      <div class="bigpills"><span class="bigpill">xxx</span><span class="bigpill ghost">yyy</span></div>
+      <p class="intro">A marketing learner documenting how brands grow — study notes, case breakdowns and small experiments with AI. Plus the things I love when I’m off the clock.</p>
+      <ol class="index">${idx.map(([h,en,zh],i)=>`<li><a href="#${h}"><span class="no">0${i+1}</span><span class="lb">${en}</span><span class="zh">${zh}</span></a></li>`).join('')}</ol>
+      <div class="homelinks" title="Coming soon"><span>LinkedIn</span><span>Email</span><span>Resume</span></div>
+    </section>
+    ${f?`<a class="home-right fn-${f.fns[0]}" href="#w-${f.id}">
+      <div class="logo-mark">${f.brands[0]}<small>${TYPE_EN[f.type].toUpperCase()} · ${yearOf(f.date)}</small></div>
+      <div style="width:min(100%,560px)">${collage(f,POS_CARD,330)}</div>
+      <span class="pill">View featured work</span></a>`:'<section class="home-right"></section>'}
+  </div>`;
 }
 
-/* 学习笔记：职能分支 */
+/* ===== 学习笔记 ===== */
 function notes(){
   const core=CONCEPTS.filter(c=>c.core);
-  return `${subnav('notes')}<div class="section" style="margin-top:22px"><div class="section-head"><h2>职能分支</h2><span class="faint" style="font-size:13px">每个分支：做什么 · 关键指标 · 工具 · AI 的影响 · 我的笔记</span></div>
-    <div class="grid">${FUNCTIONS.map(f=>{
+  return `${notesHead('notes')}
+  <div class="resultbar"><h2>Functions · 职能分支</h2><span class="count">${FUNCTIONS.length}</span></div>
+  <div class="xgrid c4" style="--cols:4">${FUNCTIONS.map((f,i)=>{
       const nc=CONCEPTS.filter(c=>c.fns.includes(f.id)).length, nr=RESOURCES.filter(r=>r.fns.includes(f.id)).length, nw=WORKS.filter(w=>w.fns.includes(f.id)).length;
-      return `<a class="card fn-tile fn-${f.id}" href="#fn-${f.id}"><div class="in"><span class="en">${f.en}</span><h3 style="font-size:16px">${f.name}</h3><span class="count">概念 ${nc} · 资料 ${nr} · 作品 ${nw}</span></div></a>`}).join('')}</div></div>
-  <div class="section"><div class="section-head"><h2>核心基础</h2><span class="faint" style="font-size:13px">所有分支通用</span></div>
-    <div class="list-plain">${core.map(conceptRow).join('')}</div></div>`;
+      return `<a class="cell fn-${f.id}" href="#fn-${f.id}"><div class="head"><span class="pill zh"><span class="dot"></span>${f.en}</span></div>
+        <div class="vis" style="--vh:110px;justify-content:flex-start"><span class="fnno">0${i+1}</span></div>
+        <div class="title" style="text-transform:none"><span class="fnname">${f.name}</span></div>
+        <div class="foot"><span class="count">概念 ${nc} · 资料 ${nr} · 作品 ${nw}</span><span class="pill view">View</span></div></a>`}).join('')}</div>
+  <div class="resultbar" style="margin-top:48px"><h2>Core concepts · 核心基础</h2><span class="count">${core.length}</span></div>
+  <div class="rows">${core.map(conceptRow).join('')}</div><div style="height:72px"></div>`;
 }
-
 function fnPage(id){
   const f=fnOf(id); if(!f) return notFound();
   const cs=CONCEPTS.filter(c=>c.fns.includes(id)), rs=sortD(RESOURCES.filter(r=>r.fns.includes(id))), ws=sortD(WORKS.filter(w=>w.fns.includes(id)));
-  return `${subnav('notes')}<div class="detail-head fn-${id}" style="margin-top:22px;border-top:6px solid var(--b);padding-top:20px">
-    <span class="eyebrow" style="color:var(--i)">${f.en}</span><h1>${f.name}</h1><p class="muted prose">${f.what}</p></div>
-  <div class="grid-2" style="margin-top:8px">
-    <div class="section"><div class="section-head"><h2>关键指标</h2></div><div class="metrics">${f.metrics.map(m=>`<span class="metric">${m}</span>`).join('')}</div></div>
-    <div class="section"><div class="section-head"><h2>常用工具</h2></div><div class="metrics">${f.tools.map(m=>`<span class="metric">${m}</span>`).join('')}</div></div>
-  </div>
-  <div class="section"><div class="section-head"><h2>AI 如何改变这个岗位</h2></div><p class="prose">${f.ai}</p></div>
-  <div class="section"><div class="section-head"><h2>我的笔记</h2></div>${empty('还没有笔记。读完相关资料后，把这个岗位的要点和自己的理解记在这里。')}</div>
-  <div class="section"><div class="section-head"><h2>相关概念</h2><span class="count">${cs.length}</span></div>${cs.length?`<div class="list-plain">${cs.map(conceptRow).join('')}</div>`:empty('还没有归到这个分支的概念。')}</div>
-  <div class="section"><div class="section-head"><h2>相关资料</h2><span class="count">${rs.length}</span></div>${rs.length?`<div class="list-plain">${rs.map(resRow).join('')}</div>`:empty('还没有相关资料。')}</div>
-  <div class="section"><div class="section-head"><h2>我的相关作品</h2><span class="count">${ws.length}</span></div>${ws.length?`<div class="grid">${ws.map(workCard).join('')}</div>`:empty('还没有这个方向的作品。')}</div>`;
+  return `<div class="fn-${id}">${notesHead('notes',f.en,f.name,'',true).replace('class="giant "','class="giant zh"')}
+  <div class="tinted" style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)"><div class="casemeta" style="padding-block:48px">
+    <p style="font-family:var(--zhserif);font-size:19px;line-height:1.8;font-weight:600">${f.what}</p>
+    <dl class="meta"><div><dt>Key metrics</dt><dd>${f.metrics.join('、')}</dd></div><div><dt>Tools</dt><dd>${f.tools.join('、')}</dd></div><div><dt>AI impact</dt><dd>${f.ai}</dd></div><div><dt>My notes</dt><dd class="faint">还没有笔记。读完相关资料后记在这里。</dd></div></dl>
+  </div></div></div>
+  <div class="gut" style="padding-bottom:72px">
+  <div class="section"><div class="section-head"><h2>相关概念</h2><span class="count">${cs.length}</span></div>${cs.length?`<div class="inrows">${cs.map(conceptRow).join('')}</div>`:empty('还没有归到这个分支的概念。')}</div>
+  <div class="section"><div class="section-head"><h2>相关资料</h2><span class="count">${rs.length}</span></div>${rs.length?`<div class="inrows">${rs.map(resRow).join('')}</div>`:empty('还没有相关资料。')}</div>
+  <div class="section"><div class="section-head"><h2>我的相关作品</h2><span class="count">${ws.length}</span></div>${ws.length?'':empty('还没有这个方向的作品。')}</div></div>
+  ${ws.length?`<div class="xgrid c2" style="margin-top:-56px">${ws.map(workCell).join('')}${ws.length%2?'<div class="cell blank"></div>':''}</div><div style="height:72px"></div>`:''}`;
 }
-
 function concepts(){
   const core=CONCEPTS.filter(c=>c.core), rest=CONCEPTS.filter(c=>!c.core);
-  return `${subnav('concepts')}<div class="section" style="margin-top:22px"><div class="section-head"><h2>概念词典</h2><span class="faint" style="font-size:13px">每个概念一页：定义 · 学自哪份资料 · 用在哪篇作品</span></div>
-    <h3 class="faint" style="margin-top:6px">核心基础</h3><div class="list-plain">${core.map(conceptRow).join('')}</div>
-    <h3 class="faint" style="margin-top:18px">职能与实战</h3><div class="list-plain">${rest.map(conceptRow).join('')}</div></div>`;
+  return `${notesHead('concepts','学习笔记 · Glossary','Concepts','概念词典')}
+    <div class="resultbar"><h2>Core · 核心基础</h2><span class="count">${core.length}</span></div><div class="rows">${core.map(conceptRow).join('')}</div>
+    <div class="resultbar" style="margin-top:48px"><h2>Applied · 职能与实战</h2><span class="count">${rest.length}</span></div><div class="rows">${rest.map(conceptRow).join('')}</div><div style="height:72px"></div>`;
 }
-
 function conceptPage(id){
   const c=cOf(id); if(!c) return notFound();
   const ws=worksUsingConcept(id), rs=sortD(c.from.map(rOf));
   const uses=ws.map(w=>{const secs=w.sections.filter(s=>s.blocks.some(b=>b.html.includes('{{c:'+id+'}}'))).map(s=>s.h);return `<a class="row" href="#w-${w.id}"><div class="rt">${w.title}</div><span class="count">${secs.length?'出现在：'+secs.join('、'):w.type}</span></a>`}).join('');
-  return `${subnav('concepts')}<div class="detail-head" style="margin-top:22px"><span class="eyebrow">${c.core?'核心基础 · ':''}${c.en}</span><h1><span class="faint">#</span>${c.name}</h1>
-    <p class="prose" style="font-size:16px">${c.def}</p><div class="tags">${c.fns.map(chip).join('')}</div></div>
-  <div class="grid-2">
-    <div class="section"><div class="section-head"><h2>学自</h2><span class="count">${rs.length}</span></div>${rs.length?`<div class="list-plain">${rs.map(resRow).join('')}</div>`:empty('还没有关联资料。读到讲这个概念的书或文章时，把它加进来。')}</div>
-    <div class="section"><div class="section-head"><h2>用在</h2><span class="count">${ws.length}</span></div>${ws.length?`<div class="list-plain">${uses}</div>`:empty('还没有作品用到这个概念。')}</div>
-  </div>`;
+  return `${head((c.core?'Core concept · ':'Concept · ')+c.en,'#'+c.name,'','',true)}
+  <div class="tinted fn-${c.fns[0]}" style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)"><div class="casemeta" style="padding-block:48px">
+    <p style="font-family:var(--zhserif);font-size:20px;line-height:1.8;font-weight:600">${c.def}</p>
+    <dl class="meta"><div><dt>Functions</dt><dd><div class="tags">${c.fns.map(chip).join('')}</div></dd></div><div><dt>Learned from</dt><dd>${rs.length?rs.map(r=>`<a href="#r-${r.id.slice(2)}">${r.title}</a>`).join('<br>'):'<span class="faint">还没有关联资料</span>'}</dd></div><div><dt>Used in</dt><dd>${ws.length?`<div class="inrows">${uses}</div>`:'<span class="faint">还没有作品用到这个概念</span>'}</dd></div></dl>
+  </div></div><div style="height:72px"></div>`;
 }
-
 let libFilter='全部';
 function library(){
   const types=['全部','书籍','文章','报告'];
   const rs=sortD(RESOURCES.filter(r=>libFilter==='全部'||r.type===libFilter));
-  return `${subnav('library')}<div class="section" style="margin-top:22px"><div class="section-head"><h2>资料库</h2><span class="faint" style="font-size:13px">按时间从新到旧，未读的书排在最后</span></div>
-    <div class="fgroup">${types.map(t=>`<button class="f ${libFilter===t?'on':''}" data-lib="${t}">${t}</button>`).join('')}</div>
-    ${rs.length?`<div class="list-plain">${rs.map(resRow).join('')}</div>`:empty(`还没有${libFilter}笔记。读完第一份后，在数据里加一条 type 为“${libFilter}”的记录。`)}</div>`;
+  return `${notesHead('library','学习笔记 · Reading','Library','资料库')}
+    <div class="gut pills" style="margin:-10px 0 22px">${types.map(t=>`<button class="pill zh ${libFilter===t?'on':''}" data-lib="${t}">${t}</button>`).join('')}</div>
+    <div class="resultbar"><h2>${libFilter==='全部'?'All':libFilter}</h2><span class="count">${rs.length} · 按时间从新到旧</span></div>
+    ${rs.length?`<div class="rows">${rs.map(resRow).join('')}</div>`:`<div class="gut">${empty(`还没有${libFilter}笔记。`)}</div>`}<div style="height:72px"></div>`;
 }
-
 function resPage(key){
   const r=rOf('r-'+key)||rOf('b-'+key); if(!r) return notFound();
   const ws=worksCiting(r.id), cs=conceptsFrom(r.id);
-  return `${subnav('library')}<div class="detail-head" style="margin-top:22px"><span class="eyebrow">${r.type} · ${r.status}</span><h1>${r.title}</h1>
-    <dl class="kv"><dt>来源</dt><dd>${r.source}</dd>${r.date?`<dt>日期</dt><dd>${r.date}</dd>`:''}${r.url?`<dt>原文</dt><dd><a href="${r.url}" target="_blank" rel="noopener">打开原文 ↗</a></dd>`:''}<dt>职能</dt><dd><div class="tags">${r.fns.map(chip).join('')}</div></dd></dl></div>
-  <div class="section"><div class="section-head"><h2>我的笔记</h2></div>${r.note.length?`<div class="prose"><ul>${r.note.map(n=>`<li>${n}</li>`).join('')}</ul></div>`:empty('还没读。读完后把要点和自己的看法记在这里，再把提炼出的概念加进概念词典。')}</div>
-  <div class="grid-2">
-    <div class="section"><div class="section-head"><h2>提炼出的概念</h2><span class="count">${cs.length}</span></div>${cs.length?`<div class="tags">${cs.map(c=>cpt(c.id)).join('')}</div>`:empty('暂无。')}</div>
-    <div class="section"><div class="section-head"><h2>被这些作品引用</h2><span class="count">${ws.length}</span></div>${ws.length?`<div class="list-plain">${ws.map(w=>`<a class="row" href="#w-${w.id}"><div class="rt">${w.title}</div><span class="count">${w.type}</span></a>`).join('')}</div>`:empty('暂无作品引用。')}</div>
-  </div>`;
+  return `${head(r.type+' · '+r.status,r.title,'','',true)}
+  <div class="tinted fn-${r.fns[0]}" style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)"><div class="casemeta" style="padding-block:48px">
+    <div class="prose">${r.note.length?`<ul style="font-size:15.5px">${r.note.map(n=>`<li>${n}</li>`).join('')}</ul>`:'<p class="faint">还没读。读完后把要点和自己的看法记在这里。</p>'}</div>
+    <dl class="meta"><div><dt>Source</dt><dd>${r.source}</dd></div>${r.date?`<div><dt>Date</dt><dd>${r.date}</dd></div>`:''}${r.url?`<div><dt>Link</dt><dd><a href="${r.url}" target="_blank" rel="noopener">打开原文 ↗</a></dd></div>`:''}
+      <div><dt>Functions</dt><dd><div class="tags">${r.fns.map(chip).join('')}</div></dd></div>
+      <div><dt>Concepts</dt><dd>${cs.length?`<div class="tags">${cs.map(c=>cpt(c.id)).join('')}</div>`:'<span class="faint">暂无</span>'}</dd></div>
+      <div><dt>Cited by</dt><dd>${ws.length?ws.map(w=>`<a href="#w-${w.id}">${w.title}</a>`).join('<br>'):'<span class="faint">暂无作品引用</span>'}</dd></div></dl>
+  </div></div><div style="height:72px"></div>`;
 }
 
-/* ===== 作品集 + 标签检索 =====
-   规则：不同类标签之间是“并且”；同一类里默认“满足任一”，可切换为“全部满足”（只作用于品牌、职能、概念）。 */
+/* ===== 作品集 + 标签检索 ===== */
 const TYPES=['品牌拆解','Case 分析','AI 实操','数据分析'];
 const S={brand:new Set(),fn:new Set(),ind:new Set(),cpt:new Set(),type:new Set(),mode:'any',q:''};
 const GROUPS=[
-  {k:'brand', lab:'品牌', opts:()=>[...new Set(WORKS.flatMap(w=>w.brands))].sort().map(b=>({v:b,label:b,n:WORKS.filter(w=>w.brands.includes(b)).length}))},
+  {k:'brand', lab:'BRAND', opts:()=>[...new Set(WORKS.flatMap(w=>w.brands))].sort().map(b=>({v:b,label:b,n:WORKS.filter(w=>w.brands.includes(b)).length}))},
   {k:'fn', lab:'职能', opts:()=>FUNCTIONS.map(f=>({v:f.id,label:f.name,alt:f.en,n:WORKS.filter(w=>w.fns.includes(f.id)).length}))},
   {k:'ind', lab:'行业', opts:()=>Object.entries(INDUSTRIES).map(([k,v])=>({v:k,label:v.name,n:WORKS.filter(w=>w.industry===k).length}))},
   {k:'cpt', lab:'概念', opts:()=>CONCEPTS.map(c=>({v:c.id,label:c.name,alt:c.en,n:WORKS.filter(w=>w.concepts.includes(c.id)).length})).filter(o=>o.n>0)},
-  {k:'type', lab:'类型', opts:()=>TYPES.map(t=>({v:t,label:t,n:WORKS.filter(w=>w.type===t).length}))}
+  {k:'type', lab:'类型', opts:()=>TYPES.map(t=>({v:t,label:t,alt:TYPE_EN[t],n:WORKS.filter(w=>w.type===t).length}))}
 ];
 const tagsOf=(w,k)=>({brand:w.brands,fn:w.fns,ind:[w.industry],cpt:w.concepts,type:[w.type]})[k];
 function matches(w){
@@ -510,7 +649,6 @@ function matches(w){
 }
 const anySel=()=>GROUPS.some(g=>S[g.k].size);
 function labelOf(k,v){ if(k==='fn') return fnOf(v).name; if(k==='ind') return INDUSTRIES[v].name; if(k==='cpt') return '#'+cOf(v).name; return v; }
-
 function optsHTML(){
   const q=S.q.trim().toLowerCase();
   return GROUPS.map(g=>{
@@ -531,13 +669,14 @@ function selHTML(){
 }
 function resultsHTML(){
   const ws=WORKS_SORTED().filter(matches);
-  const head=`<div class="resultbar"><h2>${anySel()?'检索结果':'全部作品'}</h2><span class="count">${ws.length} 篇 · 按时间从新到旧</span></div>`;
-  if(!ws.length) return head+`<div style="margin-top:16px">${empty('没有同时符合这些标签的作品。试着去掉一个标签，或切换为“同类满足任一”。')}</div>`;
-  return head+`<div class="grid" style="margin-top:18px">${ws.map(workCard).join('')}${anySel()?'':`<div class="card empty"><div class="in" style="align-items:flex-start"><span class="eyebrow">下一篇</span><p class="muted" style="font-size:13.5px">在数据里的 WORKS 加一条，卡片、检索标签和所有交叉链接会自动出现。</p></div></div>`}</div>`;
+  const top=`<div class="resultbar"><h2>${anySel()?'Results · 检索结果':'All work · 全部作品'}</h2><span class="count">${ws.length} · 按时间从新到旧</span></div>`;
+  if(!ws.length) return top+`<div class="gut" style="padding-bottom:40px">${empty('没有同时符合这些标签的作品。试着去掉一个标签，或切换为“同类满足任一”。')}</div>`;
+  const filler=ws.length%2?`<div class="cell blank"><span class="caps">Next work</span><span style="font-size:13px">在数据里的 WORKS 加一条，会自动出现在这里</span></div>`:'';
+  return top+`<div class="xgrid c2">${ws.map(workCell).join('')}${filler}</div>`;
 }
 function works(){
-  return `<div class="hero" style="padding-top:4px"><h1>作品集</h1><p class="muted">品牌拆解、Case 分析、AI 实操和数据分析。卡片顶部的色带代表涉及的职能。</p></div>
-  <div class="search" style="margin-top:20px">
+  return `${head('Selected work','Portfolio','作品集','品牌拆解、Case 分析、AI 实操和数据分析。')}
+  <div class="search">
     <input type="search" id="tagq" placeholder="搜索标签：Nike、品牌管理、增量人群……" value="${S.q}" autocomplete="off" aria-label="搜索标签">
     <div class="selbar" id="selbar">${selHTML()}</div>
     <div class="stack" id="opts" style="gap:10px">${optsHTML()}</div>
@@ -554,33 +693,144 @@ function workPage(id){
   const w=wOf(id); if(!w) return notFound();
   const counts={ins:0,prac:0,data:0}; w.sections.forEach(s=>s.blocks.forEach(b=>{if(b.ab)counts[b.ab]++}));
   const related=sortD(WORKS.filter(x=>x.id!==w.id&&x.brands.some(b=>w.brands.includes(b))));
-  return `<div class="detail-head"><span class="eyebrow">${w.type} · ${w.date}</span><h1>${w.title}</h1>
-    <div class="tags">${brandBtns(w)}${ind(w.industry)}${w.fns.map(chip).join('')}</div></div>
-  <div class="case" style="margin-top:28px">
-    <article id="art" class="stack" style="gap:30px">
-      <p class="tldr">${w.tldr}</p>
+  const kw=(w.keywords||[]).map(k=>`<span class="pill">${k}</span>`).join('');
+  return `<div class="minibar" id="minibar"><span class="mt">${w.en||w.title}</span><div class="pills">${kw}</div></div>
+  <div class="pagehead" id="casetitle" style="padding-bottom:34px"><a class="caps faint" href="#works" style="text-decoration:none">← Portfolio</a>
+    <h1 class="giant" style="margin-top:6px">${w.en||w.title}</h1><div class="subzh">${w.title}</div>
+    <div class="pills" style="margin-top:8px">${kw}</div></div>
+  <div class="hero">${collage(w,POS_HERO,460)}</div>
+  <div class="tinted fn-${w.fns[0]}"><div class="casemeta">
+    <div class="posterart fn-${w.fns[0]}"><span class="hand">${w.hand||''}</span><span class="tagline">${TYPE_EN[w.type].toUpperCase()}<br>${yearOf(w.date)}</span>
+      <div class="big">${w.poster||w.brands[0]}</div><span class="wmk">${w.brands[0]}</span></div>
+    <dl class="meta">
+      <div><dt>Overview</dt><dd>${w.summary}</dd></div>
+      <div><dt>Core insight</dt><dd>${w.tldr}</dd></div>
+      <div><dt>Date</dt><dd>${w.date}</dd></div>
+      <div><dt>Tools</dt><dd>${(w.tools||[]).join('、')||'—'}</dd></div>
+      <div><dt>My role</dt><dd>${w.role||'—'}</dd></div>
+      <div><dt>Brands</dt><dd>${brandBtns(w)}</dd></div>
+      <div><dt>Functions</dt><dd><div class="tags">${w.fns.map(chip).join('')}</div></dd></div>
+    </dl></div></div>
+  <div class="case">
+    <article id="art" class="stack" style="gap:32px">
       <div class="abbar"><span class="faint" style="font-size:12.5px">按能力查看：</span>${Object.entries(ABILITIES).map(([k,v])=>`<button class="abbtn ab-${k}" data-ab="${k}"><i></i>${v}<span>${counts[k]}</span></button>`).join('')}</div>
       ${w.sections.map((s,i)=>`<section class="csec" id="s${i}"><h2>${s.h}${s.draft?'<span class="draft">草稿 · 待改写</span>':''}</h2>
         ${s.blocks.map(b=>`<div class="blk ${b.ab?'ab ab-'+b.ab:''}">${b.ab?`<span class="ablab">${ABILITIES[b.ab]}</span>`:''}${renderText(b.html,w)}</div>`).join('')}</section>`).join('')}
       <section class="csec"><h2>参考资料</h2><ol class="refs">${w.resources.map(rid=>{const r=rOf(rid);return `<li><a href="#r-${rid.slice(2)}" style="text-decoration:none">${r.source}《${r.title}》${r.date?'，'+r.date:''}</a></li>`}).join('')}</ol></section>
-      <section class="csec"><h2>同系列作品</h2>${related.length?`<div class="grid">${related.map(workCard).join('')}</div>`:empty('还没有同品牌的其他作品。可以接着做“关键数据”里提到的小红书评论分析，作为这个系列的第二篇。')}</section>
+      <section class="csec"><h2>同系列作品</h2>${related.length?related.map(x=>`<a href="#w-${x.id}">${x.title}</a>`).join('<br>'):empty('还没有同品牌的其他作品。可以接着做“关键数据”里提到的小红书评论分析，作为这个系列的第二篇。')}</section>
     </article>
     <aside>
-      <div><h3>目录</h3><nav class="toc">${w.sections.map((s,i)=>`<a href="javascript:void(0)" data-jump="s${i}">${s.h}</a>`).join('')}</nav></div>
-      <div><h3>品牌 · 点击检索</h3><div class="tags">${brandBtns(w)}</div></div>
-      <div><h3>用到的概念</h3><div class="tags">${w.concepts.map(cpt).join('')}</div></div>
-      <div><h3>涉及职能</h3><div class="tags">${w.fns.map(chip).join('')}</div></div>
+      <div><h3>Contents</h3><nav class="toc">${w.sections.map((s,i)=>`<a href="javascript:void(0)" data-jump="s${i}">${s.h}</a>`).join('')}</nav></div>
+      <div><h3>Concepts</h3><div class="tags">${w.concepts.map(cpt).join('')}</div></div>
     </aside>
   </div>`;
 }
 
-function notFound(){return `<div class="hero"><h1>没有找到这一页</h1><p class="muted"><a href="#home">回到首页</a></p></div>`}
+/* 右上角的 Q 版小图案（占位，之后换成你自己设计的形象） */
+const MASCOTS={
+ singapore:`<path d="M5 45c3-2 6-2 9 0s6 2 9 0 6-2 9 0 6 2 9 0" fill="none" stroke="#6FA6D0" stroke-width="1.6"/><path d="M15 41c-7-2-10-9-8-16l-3.5-2.5h4.5l1.5-4.5 1.6 4.8c-2 5.5 0 10.5 5 13z" fill="var(--surface)"/><path d="M18 22c-4.5 5.5-5.5 12-2.5 19h14c2-6.5 1.8-13-1.8-18.5z" fill="var(--surface)"/><path d="M17.5 31q2 2 4 0M21.5 31q2 2 4 0M19.5 35q2 2 4 0M23.5 35q2 2 4 0M17.5 38q2 1.6 4 0" fill="none" stroke-width=".9"/><path d="M23.5 5C21 2 17 2 15 4.5c2 1 2 2 1 3-3-.5-5.5 1.5-6 4 2.5.3 3 1.3 2 2.5-2.5.5-3.5 3-3 5.5 2.5-1 3.5 0 3.5 1.5-1 2 0 4.5 2.5 5.5.5-2 2-2.5 3.5-2 1 1.5 3.5 2 5.5 1-1-2-.5-3.5 1-5z" fill="var(--b)"/><path d="M20 9q-3 2-3 5M17.5 16q-2 2-1 5M21 20q0 2 1 3" fill="none" stroke-width=".9"/><path d="M23 5.5c3.5-.7 6.5.1 8 2l3.6 2.7c.8.6.8 1.8 0 2.4l-3.4 2.2 2.8 1c.4 1.2-.4 2.4-1.8 2.6-2.2 1.4-4.7 2.2-7.2 2-4-.4-6-3.9-5.7-7.9.3-3.7 1.5-6.1 3.7-7z" fill="var(--surface)"/><ellipse cx="34.3" cy="11" rx="1.1" ry=".9" fill="var(--ink)" stroke="none"/><path d="M26.4 8.1q1.8-1.2 3.6-.2" fill="none" stroke-width="1.1"/><circle cx="28.3" cy="10" r="1" fill="var(--ink)" stroke="none"/><path d="M31.4 12.4q-1.4 1.4-.4 2.8" fill="none" stroke-width=".9"/><path d="M33.4 15.3c4.4 .2 8.4 3 11 8" fill="none" stroke="#6FA6D0" stroke-width="1.8" stroke-dasharray="2.4 2.4"/><circle cx="45.6" cy="26.6" r="1.2" fill="#6FA6D0" stroke="none"/>`,
+ japan:`<circle cx="40" cy="10" r="4.5" fill="#F7C9A0"/><path d="M5 40 18 15h12l13 25z" fill="var(--b)"/><path d="M18 15h12l4 7-4-2-3 3-3-3-3 3-3-3-4 2z" fill="var(--surface)"/><circle cx="20.5" cy="29" r="1" fill="var(--ink)" stroke="none"/><circle cx="27.5" cy="29" r="1" fill="var(--ink)" stroke="none"/><path d="M22 32q2 2 4 0" fill="none"/><ellipse cx="18" cy="32" rx="1.6" ry="1" fill="#F4B6C8" stroke="none"/><ellipse cx="30" cy="32" rx="1.6" ry="1" fill="#F4B6C8" stroke="none"/>`,
+ rwanda:`<circle cx="10" cy="24" r="4" fill="#8A8079"/><circle cx="38" cy="24" r="4" fill="#8A8079"/><circle cx="24" cy="23" r="14" fill="#8A8079"/><path d="M14 20c3-3 7-3 10-1 3-2 7-2 10 1" fill="none"/><ellipse cx="24" cy="29" rx="9" ry="7" fill="var(--b)"/><circle cx="19" cy="22.5" r="1.1" fill="var(--surface)" stroke="none"/><circle cx="29" cy="22.5" r="1.1" fill="var(--surface)" stroke="none"/><circle cx="22" cy="27" r=".9" fill="var(--ink)" stroke="none"/><circle cx="26" cy="27" r=".9" fill="var(--ink)" stroke="none"/><path d="M21 32q3 2 6 0" fill="none"/>`,
+ uk:`<path d="M6 46h36" fill="none"/><path d="M18 46V27h12v19" fill="#E9D7A6"/><path d="M21 30v13M24 30v13M27 30v13" fill="none" stroke-width=".9"/><rect x="15.5" y="14" width="17" height="14" rx="1.5" fill="#E9D7A6"/><circle cx="24" cy="21" r="5.2" fill="var(--surface)"/><path d="M24 21v-3.4M24 21l2.4 1.4" fill="none" stroke-width="1.2"/><circle cx="24" cy="21" r=".7" fill="var(--ink)" stroke="none"/><path d="M17 14l1.5-4h11l1.5 4" fill="#E9D7A6"/><path d="M19 10l5-8 5 8z" fill="var(--b)"/><path d="M24 2V0" fill="none"/><path d="M20 12.5h8" fill="none" stroke-width=".9"/>`,
+ tennis:`<g transform="rotate(-35 20 18)"><ellipse cx="20" cy="17" rx="10" ry="13" fill="var(--b)"/><path d="M14 8v18M20 4v26M26 8v18M11 12h18M10 18h20M11 24h18" fill="none" stroke-width=".8"/></g><path d="M26 28l10 12" stroke-width="3.5"/><circle cx="38" cy="12" r="6" fill="#E3EC8E"/><path d="M33 9q5 3 10 0M33 15q5-3 10 0" fill="none" stroke-width="1"/>`,
+ cello:`<g transform="rotate(-16 24 24)"><path d="M5 35 43 27" fill="none" stroke-width="1.3"/><path d="M6 36.4 43.3 28.6" fill="none" stroke-width=".6"/><rect x="4" y="33.5" width="3.5" height="3" rx=".6" fill="var(--ink)" transform="rotate(-12 5.7 35)"/><path d="M24 13c-5 0-7.5 2-7 5.5.4 2.5 2 4 2.5 5.5.2 1-3.5 2.5-4 6-.5 5 3 9 8.5 9s9-4 8.5-9c-.5-3.5-4.2-5-4-6 .5-1.5 2.1-3 2.5-5.5.5-3.5-2-5.5-7-5.5z" fill="var(--b)"/><path d="M24 13V5.5" fill="none" stroke-width="2.4"/><path d="M24 5.5c-1.6 0-2.4-1-2.4-2.2S22.6 1 24 1s2.2 1 2.2 2" fill="none" stroke-width="1.3"/><path d="M22.2 7h-1.6M25.8 7h1.6M22.2 9h-1.6M25.8 9h1.6" fill="none" stroke-width="1"/><path d="M23.4 6v24M24.6 6v24" fill="none" stroke-width=".5"/><path d="M20.6 26.3c-1 1.6.2 3.2-.8 4.8M27.4 26.3c1 1.6-.2 3.2.8 4.8" fill="none" stroke-width="1"/><path d="M21.6 29.6h4.8" fill="none" stroke-width="1.3"/><path d="M22.9 32h2.2L24 37z" fill="var(--ink)" stroke-width=".8"/><path d="M24 39v5" fill="none" stroke-width="1.6"/></g>`
+};
+const mascot=(key,fn)=>MASCOTS[key]?`<span class="mascot fn-${fn}" aria-hidden="true"><svg viewBox="0 0 48 48" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${MASCOTS[key]}</svg></span>`:'';
+/* ===== Off the Clock：和作品集同一套“倾斜屏幕卡片”语言 ===== */
+const BAR=`<div class="tbar"><i></i><i></i><i></i></div>`;
+const tpos=p=>`--x:${p[0]}%;--y:${p[1]}%;--w:${p[2]}px;--r:${p[3]}deg`;
+function devHTML(kind,t,i,style){
+  const src=t.photos[i];
+  return `<div class="dev ${kind} fn-${t.tape}" style="${style}">${src?`<img src="${src}" alt="${t.place}">`:'<span class="scr">PHOTO</span>'}</div>`;
+}
+function photoTile(t,i,p){ return devHTML('iphone',t,i,tpos(p)); }
+const ipadTile=(t,i,p)=>devHTML('ipad',t,i,tpos(p));
+function placeTile(t,p){
+  return `<div class="tile phone fn-${t.tape}" style="${tpos(p)}">${BAR}<div class="tin" style="gap:8px;padding-block:16px"><span class="k">Travel journal</span><span class="wm">${t.place}</span><div class="chiprow"><span>${t.code}</span><span>${t.zh}</span></div></div></div>`;
+}
+const infoTile=(t,k,v,p)=>`<div class="tile fn-${t.tape}" style="${tpos(p)}">${BAR}<div class="tin"><span class="k">${k}</span><span class="v" style="font-size:22px">${v}</span></div></div>`;
+function tripCollage(t,h){
+  return `<div class="collage-art" style="--h:${h}px">${photoTile(t,0,[4,2,165,-6])}${placeTile(t,[40,6,215,3])}${photoTile(t,1,[68,12,150,6])}${infoTile(t,'Stay',t.stay,[36,64,190,-3])}</div>`;
+}
+function tripCell(t){
+  return `<a class="cell" href="#t-${t.id}">
+    <div class="head"><span class="pill">Travel Journal</span>${mascot(t.id,t.tape)}</div>
+    <div class="vis" style="--vh:330px;flex-direction:column;gap:18px"><div class="logo-mark fn-${t.tape}" style="font-size:clamp(30px,3.4vw,46px)">${t.place}<small>${t.code} · ${t.zh}</small></div>
+      <div class="devs">${devHTML('ipad',t,0,'left:8%;top:6%;width:60%')}${devHTML('iphone',t,1,'left:64%;top:0;width:21%')}</div></div>
+    <div class="title">${t.place}<span class="zh">${t.zh} · ${t.stay}</span></div>
+    <div class="foot"><div class="pills"><span class="pill">${t.when}</span><span class="pill zh fn-${t.tape}"><span class="dot"></span>${t.mood}</span></div><span class="pill view">Open</span></div></a>`;
+}
+function hobbyCell(h,i){
+  return `<div class="cell">
+    <div class="head"><span class="pill">Hobby 0${i+1}</span>${mascot(h.id,['digital','pr'][i%2])}</div>
+    <div class="vis" style="--vh:300px"><div class="collage-art" style="--h:290px">
+      <div class="tile phone fn-${['digital','pr'][i%2]}" style="${tpos([14,4,200,-5])}">${BAR}<div class="tin" style="align-items:center;gap:10px;padding-block:18px"><svg viewBox="0 0 64 64" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">${h.icon}</svg><span class="wm">${h.en}</span></div></div>
+      <div class="tile fn-${['digital','pr'][i%2]}" style="${tpos([52,18,190,4])}">${BAR}<div class="tin"><span class="k">Since</span><span class="v" style="font-size:22px">${h.since}</span></div></div>
+      <div class="tile fn-${['digital','pr'][i%2]}" style="${tpos([48,58,220,-2])}">${BAR}<div class="tin"><span class="k">Note</span><span class="q" style="font-size:13px">${h.note}</span></div></div>
+    </div></div>
+    <div class="title">${h.en}<span class="zh">${h.zh}</span></div></div>`;
+}
+function life(){
+  const heroTiles=TRIPS.map((t,i)=>photoTile(t,0,[3+i*24,i%2?12:2,165,[-6,4,-3,6][i%4]])+placeTile(t,[13+i*24,64,190,[3,-4,5,-2][i%4]])).join('');
+  return `${head('Off the clock','Off the Clock','旅行观察与爱好','工作之外的我。照片和文字会慢慢补上，标着 <span class="placeholder">xxx</span> 的地方都还在等内容。')}
+  <div class="hero"><div class="collage-art" style="--h:470px">${heroTiles}</div></div>
+  <div class="resultbar" style="margin-top:48px"><h2>Travel journal · 旅行手帐</h2><span class="count">${TRIPS.length}</span></div>
+  <div class="xgrid c2">${TRIPS.map(tripCell).join('')}${TRIPS.length%2?'<div class="cell blank"></div>':''}</div>
+  <div class="resultbar" style="margin-top:48px"><h2>Hobbies · 爱好</h2><span class="count">${HOBBIES.length}</span></div>
+  <div class="xgrid c2">${HOBBIES.map(hobbyCell).join('')}${HOBBIES.length%2?'<div class="cell blank"></div>':''}</div><div style="height:72px"></div>`;
+}
+function tripPage(id){
+  const t=tOf(id); if(!t) return notFound();
+  const others=TRIPS.filter(x=>x.id!==t.id);
+  const P=[[3,8,175,-6],[18,30,165,4],[33,4,215,-3],[50,8,170,5],[66,34,165,-4],[80,6,175,6]];
+  const hero=photoTile(t,0,[3,6,145,-6])+ipadTile(t,1,[19,10,430,-2])+photoTile(t,2,[52,3,145,4])+photoTile(t,3,[65,14,140,-3])+placeTile(t,[80,8,200,6])+infoTile(t,'Mood',t.mood,[78,60,190,-3])+infoTile(t,'When',t.when,[36,72,190,3]);
+  return `<div class="pagehead"><a class="caps faint" href="#life" style="text-decoration:none">← Off the Clock</a>
+    <h1 class="giant" style="margin-top:6px">${t.place}</h1><div class="subzh">${t.zh}</div>
+    <div class="pills" style="margin-top:8px"><span class="pill">Travel Journal</span><span class="pill">${t.code}</span><span class="pill">${t.when}</span><span class="pill zh">${t.stay}</span></div></div>
+  <div class="hero"><div class="collage-art" style="--h:470px">${hero}</div></div>
+  <div class="tinted fn-${t.tape}"><div class="casemeta">
+    <div class="stack" style="gap:16px"><span class="caps faint">Journal · 手帐</span>${t.journal.map(p=>`<p class="journal">${p}</p>`).join('')}</div>
+    <dl class="meta">
+      <div><dt>When</dt><dd>${t.when}</dd></div><div><dt>Stay</dt><dd>${t.stay}</dd></div><div><dt>Mood</dt><dd>${t.mood}</dd></div>
+      <div><dt>Brand notes</dt><dd>${t.observe.join('<br>')}</dd></div>
+      <div><dt>Linked notes</dt><dd>${t.concepts.length?`<div class="tags">${t.concepts.map(cpt).join('')}</div>`:'<span class="faint">还没有关联到学习笔记的概念</span>'}</dd></div>
+    </dl></div></div>
+  <div class="resultbar"><h2>More places</h2><span class="count">${others.length}</span></div>
+  <div class="xgrid c2">${others.map(tripCell).join('')}${others.length%2?'<div class="cell blank"></div>':''}</div><div style="height:72px"></div>`;
+}
 
+/* ===== About ===== */
+function about(){
+  return `${head('About','About me','关于我')}
+  <div class="tinted fn-brand" style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)"><div class="casemeta">
+    <div class="prose" style="font-size:17px;font-weight:300;line-height:1.85">
+      <p>Hi, I’m Hannah. <span class="placeholder">A short introduction goes here — xxx.</span></p>
+      <p>This site is my notebook for learning marketing from scratch: what I read, the cases I break down, and small experiments with AI. It also keeps the things I love outside work.</p>
+    </div>
+    <dl class="meta">
+      <div><dt>Currently</dt><dd>Learning marketing and building this notebook</dd></div>
+      <div><dt>Based in</dt><dd><span class="placeholder">xxx</span></dd></div>
+      <div><dt>Interests</dt><dd>Travel · Cello · Tennis</dd></div>
+      <div><dt>Elsewhere</dt><dd class="faint">LinkedIn · Email · Resume — coming soon</dd></div>
+    </dl></div></div><div style="height:72px"></div>`;
+}
+function notFound(){return `${head('404','Not found','没有找到这一页')}<p class="gut"><a href="#home">回到首页</a></p>`}
+
+/* ===== 外壳与路由 ===== */
+function shell(html, nav){
+  const items=[['about','About'],['notes','Notes'],['works','Portfolio'],['life','Off the Clock']];
+  return `<header class="top"><div class="bar"><a class="caps" href="#home" style="font-size:13px">Home</a>
+      <nav class="caps" style="font-size:12.5px" aria-label="主导航">${items.map(([h,t])=>`<a href="#${h}" class="${nav===h?'on':''}">${t}</a>`).join('')}</nav></div></header>
+    <main id="app">${html}</main>
+    <footer class="foot"><span>HANNAH · 营销手记</span><span>NOTES · PORTFOLIO · OFF THE CLOCK</span></footer>`;
+}
+let io=null;
 function route(){
   const h=(location.hash||'#home').slice(1);
-  let html, nav='home';
-  if(h==='home'||h==='') html=home();
-  else if(h==='notes'){html=notes();nav='notes'}
+  if(io){io.disconnect();io=null}
+  if(h==='home'||h===''){ root.innerHTML=home(); app=null; window.scrollTo(0,0); return; }
+  let html, nav='';
+  if(h==='notes'){html=notes();nav='notes'}
   else if(h==='concepts'){html=concepts();nav='notes'}
   else if(h==='library'){html=library();nav='notes'}
   else if(h.startsWith('fn-')){html=fnPage(h.slice(3));nav='notes'}
@@ -588,12 +838,16 @@ function route(){
   else if(h.startsWith('r-')){html=resPage(h.slice(2));nav='notes'}
   else if(h==='works'){html=works();nav='works'}
   else if(h.startsWith('w-')){html=workPage(h.slice(2));nav='works'}
+  else if(h==='life'){html=life();nav='life'}
+  else if(h.startsWith('t-')){html=tripPage(h.slice(2));nav='life'}
+  else if(h==='about'){html=about();nav='about'}
   else html=notFound();
-  app.innerHTML=html;
-  document.querySelectorAll('nav.main a').forEach(a=>a.classList.toggle('on',a.dataset.nav===nav));
+  root.innerHTML=shell(html,nav); app=$('#app');
   window.scrollTo(0,0);
+  const ct=$('#casetitle'), mb=$('#minibar');
+  if(ct&&mb&&'IntersectionObserver' in window){io=new IntersectionObserver(([e])=>mb.classList.toggle('show',!e.isIntersecting),{rootMargin:'-64px 0px 0px 0px'});io.observe(ct)}
 }
-app.addEventListener('click',e=>{
+root.addEventListener('click',e=>{
   const lib=e.target.closest('[data-lib]'); if(lib){libFilter=lib.dataset.lib;app.innerHTML=library();return}
   const o=e.target.closest('[data-g]'); if(o){const s=S[o.dataset.g],v=o.dataset.v; s.has(v)?s.delete(v):s.add(v); refreshSearch(); return}
   const rm=e.target.closest('[data-rm]'); if(rm){S[rm.dataset.rm].delete(rm.dataset.v); refreshSearch(); return}
@@ -606,10 +860,11 @@ app.addEventListener('click',e=>{
     if(!on){ab.classList.add('on');art.classList.add('focus-'+k)} return}
   const j=e.target.closest('[data-jump]'); if(j){e.preventDefault();document.getElementById(j.dataset.jump).scrollIntoView({behavior:'smooth'})}
 });
-app.addEventListener('input',e=>{ if(e.target.id==='tagq'){S.q=e.target.value; $('#opts').innerHTML=optsHTML();} });
+root.addEventListener('input',e=>{ if(e.target.id==='tagq'){S.q=e.target.value; $('#opts').innerHTML=optsHTML();} });
 window.addEventListener('hashchange',route);
 route();
 </script>
+
 <style>
 /* 网站助教：右下角唤起，桌面为浮动面板，手机为底部抽屉 */
 .coach-fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:20;font:inherit;font-size:14px;display:inline-flex;align-items:center;gap:8px;padding:11px 18px 11px 14px;border-radius:999px;border:none;background:var(--ink);color:var(--bg);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.12)}
@@ -646,7 +901,7 @@ route();
 @media (max-width:560px){.coach{right:0;left:0;bottom:0;width:100%;height:min(82vh,640px);border-radius:16px 16px 0 0;border-bottom:none}}
 </style>
 
-<button class="coach-fab" id="coachFab" hidden aria-label="打开网站助教"><span class="av">A</span>问助教</button>
+<button class="coach-fab" id="coachFab" hidden aria-label="打开网站助教"><span class="av">A</span>Ask Ayato</button>
 <section class="coach" id="coach" hidden aria-label="网站助教">
   <div class="coach-head">
     <span class="av">A</span>
@@ -676,7 +931,7 @@ route();
   const cName=id=>(CONCEPTS.find(c=>c.id===id)||{}).name||id;
   function siteContext(){
     const L=[];
-    L.push('## 页面导航 id\nhome 首页；notes 职能分支；concepts 概念词典；library 资料库；works 作品集与标签检索');
+    L.push('## 页面导航 id\nhome 首页；notes 职能分支；concepts 概念词典；library 资料库；works 作品集与标签检索；life 生活与兴趣；about 关于我');
     L.push('## 职能分支（8 个）');
     FUNCTIONS.forEach(f=>L.push(`- [fn-${f.id}] ${f.name}（${f.en}）：${f.what} 关键指标：${f.metrics.join('、')}。常用工具：${f.tools.join('、')}。AI 影响：${f.ai} 我的笔记：还没写。`));
     L.push('## 概念词典');
@@ -704,7 +959,7 @@ route();
 【回答依据】
 - 以下面的「网站数据」为准回答网站相关的问题。网站里没有的内容，直接说“网站里还没有这部分”，不要编造作品、笔记、数据或阅读状态。
 - 可以补充通用营销知识，但要在那句话后标注“（网站外的通用知识）”。
-- 提到网站里的页面时，用 [[页面id|显示文字]] 的格式写成链接，例如 [[c-incremental|增量人群]]、[[w-nikeskims|NikeSKIMS 案例]]。只能使用网站数据里方括号中出现过的 id，或 home、notes、concepts、library、works。
+- 提到网站里的页面时，用 [[页面id|显示文字]] 的格式写成链接，例如 [[c-incremental|增量人群]]、[[w-nikeskims|NikeSKIMS 案例]]。只能使用网站数据里方括号中出现过的 id，或 home、notes、concepts、library、works、life、about。
 - 格式只用段落、**加粗**、以“- ”或“1. ”开头的列表。不要用标题、表格或代码块。
 
 用户当前正在看的页面 id：${where}
@@ -714,7 +969,7 @@ ${siteContext()}`;
   }
 
   /* ---- 渲染回答：转义后只支持链接、加粗和列表 ---- */
-  const VALID=()=>new Set(['home','notes','concepts','library','works',...FUNCTIONS.map(f=>'fn-'+f.id),...CONCEPTS.map(c=>'c-'+c.id),...RESOURCES.map(r=>'r-'+r.id.slice(2)),...WORKS.map(w=>'w-'+w.id)]);
+  const VALID=()=>new Set(['home','notes','concepts','library','works','life','about',...FUNCTIONS.map(f=>'fn-'+f.id),...CONCEPTS.map(c=>'c-'+c.id),...RESOURCES.map(r=>'r-'+r.id.slice(2)),...WORKS.map(w=>'w-'+w.id)]);
   const esc=s=>s.replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
   function inline(s,valid){
     return esc(s).replace(/\[\[([\w-]+)\|([^\]]+)\]\]/g,(m,id,t)=>valid.has(id)?`<a href="#${id}">${t}</a>`:t)
@@ -783,6 +1038,8 @@ ${siteContext()}`;
   }
 })();
 </script>
+
+<style>.coach-fab{font-family:var(--geo);letter-spacing:.14em;text-transform:uppercase;font-size:12px;font-weight:500}.coach-fab .av,.coach-head .av{font-family:var(--geo)}.coach,.coach-head .iconbtn,.coach-form textarea,.coach-form button{font-family:var(--geo)}.coach{border:1px solid var(--rule);border-radius:0}.coach-head{border-bottom:1px solid var(--rule)}</style>
 
 </body>
 </html>
