@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>[hidden]{display:none!important} img{max-width:100%} body{margin:0}</style>
+<title>营销手记</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<style>
+/* Layout: a two-wing notebook. Left wing = 学习笔记, right wing = 作品集; every page ends with the links back to the other wing. */
+:root{
+  --bg:#FBFAF7; --surface:#FFFFFF; --ink:#1F1E1B; --ink-2:#5C5951; --ink-3:#8F8B81; --line:#E7E3DA; --hover:#F3F1EC;
+  --serif:"Noto Serif SC","Songti SC",serif; --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  /* 职能：8 种柔和色，b = 色带/底色，i = 同色系文字 */
+  --brand-b:#F8D3DE; --brand-i:#8E3550;
+  --ecom-b:#FAD8BF; --ecom-i:#8A4A18;
+  --cmi-b:#F7EBB8; --cmi-i:#665A0E;
+  --trade-b:#DDEDC2; --trade-i:#4A6420;
+  --crm-b:#C9EDE0; --crm-i:#1F6650;
+  --pr-b:#D6D6F7; --pr-i:#45448E;
+  --media-b:#CBE3F7; --media-i:#245E8C;
+  --digital-b:#EFD5F2; --digital-i:#74357F;
+  /* 能力：正文段落色块，颜色更深 */
+  --ins:#A8716A; --ins-bg:#F6EEEC; --prac:#9C7B5E; --prac-bg:#F5EFE9; --data:#7A6F66; --data-bg:#F1EFEC;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#161719; --surface:#1E1F22; --ink:#ECEAE4; --ink-2:#B4B0A7; --ink-3:#87847C; --line:#2F3034; --hover:#25262A;
+  --brand-b:#6B3A4A; --brand-i:#F8D3DE; --ecom-b:#6E4A30; --ecom-i:#FAD8BF; --cmi-b:#5E5426; --cmi-i:#F7EBB8;
+  --trade-b:#48582E; --trade-i:#DDEDC2; --crm-b:#285A4A; --crm-i:#C9EDE0; --pr-b:#3F3F72; --pr-i:#D6D6F7;
+  --media-b:#2F5170; --media-i:#CBE3F7; --digital-b:#5E3D68; --digital-i:#EFD5F2;
+  --ins:#D9A49D; --ins-bg:#2B2120; --prac:#C9A585; --prac-bg:#2A231C; --data:#B4A99F; --data-bg:#24221F;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#161719; --surface:#1E1F22; --ink:#ECEAE4; --ink-2:#B4B0A7; --ink-3:#87847C; --line:#2F3034; --hover:#25262A;
+  --brand-b:#6B3A4A; --brand-i:#F8D3DE; --ecom-b:#6E4A30; --ecom-i:#FAD8BF; --cmi-b:#5E5426; --cmi-i:#F7EBB8;
+  --trade-b:#48582E; --trade-i:#DDEDC2; --crm-b:#285A4A; --crm-i:#C9EDE0; --pr-b:#3F3F72; --pr-i:#D6D6F7;
+  --media-b:#2F5170; --media-i:#CBE3F7; --digital-b:#5E3D68; --digital-i:#EFD5F2;
+  --ins:#D9A49D; --ins-bg:#2B2120; --prac:#C9A585; --prac-bg:#2A231C; --data:#B4A99F; --data-bg:#24221F;
+  color-scheme:dark}
+.fn-brand{--b:var(--brand-b);--i:var(--brand-i)} .fn-ecom{--b:var(--ecom-b);--i:var(--ecom-i)} .fn-cmi{--b:var(--cmi-b);--i:var(--cmi-i)} .fn-trade{--b:var(--trade-b);--i:var(--trade-i)}
+.fn-crm{--b:var(--crm-b);--i:var(--crm-i)} .fn-pr{--b:var(--pr-b);--i:var(--pr-i)} .fn-media{--b:var(--media-b);--i:var(--media-i)} .fn-digital{--b:var(--digital-b);--i:var(--digital-i)}
+.ab-ins{--a:var(--ins);--abg:var(--ins-bg)} .ab-prac{--a:var(--prac);--abg:var(--prac-bg)} .ab-data{--a:var(--data);--abg:var(--data-bg)}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75;padding-inline:16px;padding-block:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:0 16px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;min-height:58px}
+.logo{font-family:var(--serif);font-weight:700;font-size:19px;text-decoration:none;letter-spacing:.04em}
+.logo small{font-family:var(--mono);font-weight:400;font-size:11px;color:var(--ink-3);letter-spacing:.06em;margin-left:8px}
+nav.main{display:flex;gap:4px}
+nav.main a,.subnav a{text-decoration:none;padding:6px 12px;border-radius:999px;color:var(--ink-2);font-size:14px}
+nav.main a:hover,.subnav a:hover{background:var(--hover)}
+nav.main a.on{background:var(--ink);color:var(--bg)}
+.subnav{display:flex;gap:4px;flex-wrap:wrap;padding-block:14px 0}
+.subnav a.on{color:var(--ink);background:var(--hover);font-weight:500}
+main{padding-block:28px 72px;min-height:70vh}
+h1,h2,h3{text-wrap:balance;margin:0}
+h1{font-family:var(--serif);font-size:clamp(26px,4vw,36px);line-height:1.3;font-weight:700}
+h2{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.4}
+h3{font-size:15px;font-weight:500}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase}
+.muted{color:var(--ink-2)} .faint{color:var(--ink-3)}
+.stack{display:flex;flex-direction:column;gap:12px}
+.section{display:flex;flex-direction:column;gap:14px;margin-top:40px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr))}
+.grid-2{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+
+/* tags */
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;line-height:1;padding:5px 10px;border-radius:999px;background:var(--b);color:var(--i);text-decoration:none;white-space:nowrap}
+.chip:hover{filter:brightness(.97)}
+.ind{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
+.ind svg{width:15px;height:15px;flex:none}
+.cpt{font-size:13px;text-decoration:none;color:var(--ink-2);white-space:nowrap}
+.cpt b{font-weight:400;color:var(--ink-3);margin-right:1px}
+.cpt:hover{color:var(--ink)}
+.brandtxt{font-size:13px;color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.band{display:flex;height:6px}
+.band span{flex:1;background:var(--b)}
+
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
+a.card:hover{border-color:var(--ink-3);transform:translateY(-1px)}
+.card .in{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card.empty{border-style:dashed;background:transparent;justify-content:center}
+.fn-tile{border-top:6px solid var(--b)}
+.fn-tile .in{gap:6px}
+.fn-tile .en{font-family:var(--mono);font-size:11px;color:var(--i);letter-spacing:.04em}
+.count{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.row{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.row:hover .rt{text-decoration:underline;text-underline-offset:3px}
+.row .rt{min-width:0}
+.list-plain{display:flex;flex-direction:column}
+.filters{display:flex;flex-direction:column;gap:10px}
+.fgroup{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.fgroup .lab{font-size:12px;color:var(--ink-3);width:40px}
+button.f{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);padding:4px 11px;border-radius:999px;cursor:pointer}
+button.f:hover{border-color:var(--ink-3)}
+button.f.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button.f.fnb.on{background:var(--b);color:var(--i);border-color:var(--b)}
+.empty-note{border:1px dashed var(--line);border-radius:10px;padding:16px 18px;color:var(--ink-3);font-size:14px}
+
+/* home */
+.hero{display:flex;flex-direction:column;gap:12px;max-width:640px;padding-block:12px 8px}
+.wing{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:14px}
+.wing h2 a{text-decoration:none}
+.wing .big{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.legend{display:grid;gap:10px 22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.legend div{display:flex;flex-direction:column;gap:6px;font-size:13px}
+.abkey{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--a)}
+.abkey i{width:10px;height:10px;background:var(--a);display:inline-block;border-radius:2px}
+
+/* detail pages */
+.detail-head{display:flex;flex-direction:column;gap:12px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.prose{max-width:66ch;display:flex;flex-direction:column;gap:14px}
+.prose ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.kv{display:grid;grid-template-columns:88px 1fr;gap:8px 16px;font-size:14px}
+.kv dt{color:var(--ink-3)} .kv dd{margin:0;min-width:0}
+.metrics{display:flex;flex-wrap:wrap;gap:8px}
+.metric{font-size:13px;border:1px solid var(--line);border-radius:6px;padding:4px 10px;background:var(--surface)}
+
+/* case */
+.case{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:48px;align-items:start}
+.case aside{position:sticky;top:84px;display:flex;flex-direction:column;gap:22px;font-size:13.5px}
+.case aside h3{font-size:12px;color:var(--ink-3);font-weight:500;margin-bottom:6px}
+.toc a{display:block;text-decoration:none;color:var(--ink-2);padding:3px 0}
+.toc a:hover{color:var(--ink)}
+.tldr{font-family:var(--serif);font-size:18px;line-height:1.7;border-left:3px solid var(--ink);padding:2px 0 2px 16px}
+.abbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.abbtn{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:999px;border:1px solid var(--a);color:var(--a);background:transparent;cursor:pointer}
+.abbtn i{width:9px;height:9px;border-radius:2px;background:var(--a)}
+.abbtn.on{background:var(--a);color:var(--bg)} .abbtn.on i{background:var(--bg)}
+.abbtn span{font-family:var(--mono);font-size:11px;opacity:.85}
+.csec{display:flex;flex-direction:column;gap:14px;scroll-margin-top:90px}
+.csec h2{font-size:20px}
+.blk{max-width:68ch}
+.blk.ab{background:var(--abg);border-left:3px solid var(--a);padding:12px 16px 13px}
+.blk.ab .ablab{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--a);display:block;margin-bottom:3px}
+.blk ul{margin:0;padding-left:1.2em}
+.blk table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+.blk th,.blk td{text-align:left;padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.blk th{font-weight:500;color:var(--ink-3);font-size:12px}
+.tablewrap{overflow-x:auto}
+article.focus .blk{transition:opacity .2s}
+article.focus-ins .blk:not(.ab-ins),article.focus-prac .blk:not(.ab-prac),article.focus-data .blk:not(.ab-data){opacity:.28}
+.draft{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;border:1px solid var(--ink-3);color:var(--ink-3);border-radius:4px;padding:1px 6px;margin-left:8px;vertical-align:middle}
+sup a{font-family:var(--mono);font-size:10.5px;text-decoration:none;color:var(--ink-3);padding-left:1px}
+.inl{text-decoration:underline dotted var(--ink-3);text-underline-offset:4px}
+.inl b{font-weight:400;color:var(--ink-3)}
+.refs{display:flex;flex-direction:column;gap:6px;font-size:13.5px;padding-left:0;list-style:none;counter-reset:r;margin:0}
+.refs li{counter-increment:r;display:flex;gap:10px}
+.refs li::before{content:"[" counter(r) "]";font-family:var(--mono);font-size:11.5px;color:var(--ink-3);padding-top:2px;min-width:24px}
+footer{border-top:1px solid var(--line);padding-block:20px 28px;font-size:12px;color:var(--ink-3);font-family:var(--mono);margin-inline:-16px;padding-inline:16px}
+/* case 检索 */
+.search{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px 20px;display:flex;flex-direction:column;gap:16px}
+.search input[type=search]{font:inherit;font-size:15px;width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.search input[type=search]:focus{outline:none;border-color:var(--ink-3)}
+.selbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:30px}
+.selbar .hint{font-size:13px;color:var(--ink-3)}
+.sel{font:inherit;font-size:12.5px;display:inline-flex;align-items:center;gap:6px;padding:4px 6px 4px 11px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
+.sel.fnsel{background:var(--b);color:var(--i);border-color:var(--b)}
+.sel .x{font-size:14px;line-height:1;opacity:.75;padding:0 4px}
+.linkbtn{font:inherit;font-size:12.5px;background:none;border:none;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:2px 4px}
+.mode{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-left:auto}
+.mode button{font:inherit;font-size:12px;border:none;background:transparent;color:var(--ink-2);padding:4px 11px;cursor:pointer}
+.mode button.on{background:var(--hover);color:var(--ink);font-weight:500}
+.ogroup{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;align-items:start}
+.ogroup .lab{font-size:12px;color:var(--ink-3);padding-top:5px}
+.opts{display:flex;flex-wrap:wrap;gap:6px}
+.opt{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink-2);padding:4px 11px;border-radius:999px;cursor:pointer}
+.opt:hover{border-color:var(--ink-3);color:var(--ink)}
+.opt .n{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.opt.on{background:var(--ink);color:var(--bg);border-color:var(--ink)} .opt.on .n{color:var(--bg);opacity:.7}
+.opt.fo .dot{width:8px;height:8px;border-radius:50%;background:var(--b);box-shadow:0 0 0 1px var(--i) inset}
+.opt.fo.on{background:var(--b);color:var(--i);border-color:var(--i)} .opt.fo.on .n{color:var(--i)}
+.opt.cp b{font-weight:400;color:var(--ink-3)} .opt.cp.on b{color:var(--bg)}
+.opt svg{width:14px;height:14px}
+.resultbar{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:26px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.brandbtn{font:inherit;font-size:13px;background:none;border:none;padding:0;color:var(--ink);cursor:pointer;text-decoration:underline dotted var(--ink-3);text-underline-offset:4px}
+.brandbtn:hover{text-decoration-style:solid}
+@media (max-width:860px){.case{grid-template-columns:minmax(0,1fr)} .case aside{position:static;order:-1;border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--surface)} .case aside .toc{display:flex;flex-wrap:wrap;gap:4px 14px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#home">营销手记<small>XINYU HAN</small></a>
+  <nav class="main" aria-label="主导航">
+    <a href="#home" data-nav="home">首页</a>
+    <a href="#notes" data-nav="notes">学习笔记</a>
+    <a href="#works" data-nav="works">作品集</a>
+  </nav>
+</div></header>
+<div class="wrap"><main id="app"></main></div>
+<footer><div class="wrap">Xinyu Han · 营销手记 · 新增内容只需在文件顶部的数据里添加一条，交叉链接会自动生成</div></footer>
+
+<script>
+/* ================= 数据：以后只改这里 ================= */
+
+const FUNCTIONS = [
+  {id:'brand', name:'品牌管理', en:'Brand Management',
+   what:'负责品牌定位、产品线规划、新品上市和整合营销。快消公司里的品牌经理（Brand Manager）通常对一个品牌的生意结果负责。',
+   metrics:['市场份额 Market Share','渗透率 Penetration','品牌健康度 Brand Health','销售额与利润'],
+   tools:['零售监测数据（尼尔森IQ、凯度）','品牌健康追踪 BHT','上市计划 Go-to-Market'],
+   ai:'用 AI 做概念测试和洞察初筛，批量生成上市素材初稿，品牌经理把时间更多放在判断和协调上。'},
+  {id:'digital', name:'数字与社媒营销', en:'Digital & Social',
+   what:'策划小红书、抖音、微博等平台的内容，管理 KOL/KOC 投放，负责“种草”到“拔草”的链路。',
+   metrics:['互动率 Engagement Rate','CPE 单次互动成本','搜索指数','种草转化'],
+   tools:['蒲公英（小红书）','巨量星图（抖音）','第三方社媒数据平台'],
+   ai:'AIGC 批量产出文案、图片和短视频；用 AI 分析评论区，快速找到用户真实反馈。'},
+  {id:'ecom', name:'电商运营', en:'E-commerce',
+   what:'运营天猫、京东、抖店等店铺，策划 618、双 11 等大促，管理商品、价格和流量。',
+   metrics:['GMV','转化率 CVR','客单价 AOV','ROI'],
+   tools:['生意参谋（天猫）','京东商智','抖店罗盘'],
+   ai:'智能客服、AI 生成商品详情页、数字人直播，运营重心转向选品和策略。'},
+  {id:'media', name:'媒介投放', en:'Media',
+   what:'分配广告预算，制定投放排期，在不同平台和形式之间优化效果。',
+   metrics:['CPM','CTR 点击率','ROAS 广告支出回报','Reach 触达'],
+   tools:['巨量引擎','腾讯广告','阿里妈妈'],
+   ai:'平台的智能出价和自动化投放越来越成熟，人的价值转向预算策略和素材判断。'},
+  {id:'crm', name:'CRM 与会员', en:'CRM & Loyalty',
+   what:'搭建会员体系和私域（企业微信、小程序），按用户生命周期设计触达和复购。',
+   metrics:['复购率','LTV 用户终身价值','会员渗透率','活跃率'],
+   tools:['企业微信','SCRM 系统','CDP 客户数据平台'],
+   ai:'个性化推荐、流失预测和自动化触达，让“千人千面”的运营成本大幅下降。'},
+  {id:'cmi', name:'市场研究', en:'Consumer & Market Insights',
+   what:'通过调研、数据分析和消费者访谈，为品牌和产品决策提供洞察。',
+   metrics:['渗透率','NPS 净推荐值','品牌漏斗 Brand Funnel','U&A 使用习惯'],
+   tools:['问卷与焦点小组','Python / Excel','社媒评论文本分析'],
+   ai:'AI 能快速挖掘海量评论，也出现了“AI 合成用户”做初步测试，但仍需真实调研验证。'},
+  {id:'trade', name:'渠道与零售', en:'Trade Marketing & Retail',
+   what:'负责线下渠道、陈列、促销和门店体验，奢侈品和运动品牌里也包括零售运营和快闪活动。',
+   metrics:['铺货率 Distribution','动销率 Sell-out','店效与坪效','连带率'],
+   tools:['渠道销售数据','门店巡检','零售体验设计'],
+   ai:'智能补货、用图像识别检查门店陈列，门店数据可以更快反馈到决策。'},
+  {id:'pr', name:'公关与传播', en:'PR & Communications',
+   what:'管理媒体关系、事件营销、名人与明星合作、危机公关和口碑。',
+   metrics:['声量 Share of Voice','情感倾向','媒体曝光价值','话题热度'],
+   tools:['舆情监测工具','媒体资源库','活动执行'],
+   ai:'实时舆情监测和情感分析，危机苗头能更早被发现。'}
+];
+
+const INDUSTRIES = {
+  sport:{name:'运动服饰', icon:'<path d="M2 14.5h16v-2.2l-5.2-2-2.3-3.3H5.2L2 8.8z"/><path d="M2 12h16"/>'},
+  beauty:{name:'美妆', icon:'<path d="M7 18V10h6v8z"/><path d="M8 10V5.5L12 3v7"/>'},
+  luxury:{name:'奢侈品', icon:'<path d="M3 7.5 6.5 3h7L17 7.5 10 17z"/><path d="M3 7.5h14"/>'},
+  fmcg:{name:'快消', icon:'<path d="M8 2h4v3l2.2 3v10H5.8V8L8 5z"/><path d="M5.8 11h8.4"/>'}
+};
+
+const ABILITIES = {ins:'消费者洞察', prac:'实操', data:'数据'};
+
+const CONCEPTS = [
+  {id:'stp', name:'STP', en:'Segmentation · Targeting · Positioning', core:true, fns:['brand','cmi'],
+   def:'先把市场按需求切分（细分），再选出要服务的人群（目标市场），最后决定在他们心中占据什么位置（定位）。几乎所有营销分析都从这三步开始。', from:[]},
+  {id:'positioning', name:'定位', en:'Positioning', core:true, fns:['brand'],
+   def:'在目标顾客心智中占据一个清晰、独特、可被记住的位置。好的定位让顾客一想到某个需求就想到你。', from:['b-positioning']},
+  {id:'mental', name:'心智显著性', en:'Mental Availability', core:true, fns:['brand','media'],
+   def:'购买时品牌被想起的容易程度。Byron Sharp 认为品牌增长主要靠两件事：更容易被想起（心智显著性）和更容易被买到（购买便利性）。', from:['b-hbg']},
+  {id:'penetration', name:'渗透率', en:'Penetration', core:true, fns:['brand','cmi'],
+   def:'一段时间内买过该品牌的人占全部目标人群的比例。《How Brands Grow》的核心观点是：增长主要来自渗透率提升，而不是让老顾客更忠诚。', from:['b-hbg']},
+  {id:'expectation', name:'期望落差', en:'Expectation Gap', core:true, fns:['cmi','brand'],
+   def:'顾客满意度取决于实际体验和事先预期的差距。背书越强、宣传越响，预期越高，体验不达标时的失望也越大。', from:['r-daofa']},
+  {id:'incremental', name:'增量人群', en:'Incremental Audience', core:false, fns:['brand','cmi'],
+   def:'品牌现有用户之外、能带来新增长的人群。分析一个新品牌或新品，先问一句：它要抢的到底是谁？', from:['r-daofa']},
+  {id:'cobrand', name:'联名子品牌', en:'Co-branded Sub-brand', core:false, fns:['brand'],
+   def:'两个品牌共同创立、拥有独立团队和长期产品线的新品牌，比一次性的联名系列投入更大、周期更长。例如 Jordan Brand 和 NikeSKIMS。', from:['r-daofa','r-shidai']},
+  {id:'assortment', name:'品类矩阵与连带率', en:'Assortment & Attachment Rate', core:false, fns:['trade','ecom'],
+   def:'用成套的品类组合（衣、鞋、配饰）引导顾客一次买多件。连带率指平均每单购买的件数，直接影响客单价 AOV。', from:['r-daofa']},
+  {id:'popup', name:'慢闪店', en:'Pop-up Store', core:false, fns:['trade','pr'],
+   def:'限时开设的线下空间，用来测试市场、制造话题、让顾客亲身体验。比正式门店投入低、灵活度高。', from:['r-daofa','r-lanjing']},
+  {id:'celebrity', name:'名人效应', en:'Celebrity Endorsement', core:false, fns:['pr','brand'],
+   def:'借名人的关注度和形象为品牌背书，能快速带来声量。风险在于名人的争议会和品牌绑定。', from:['r-daofa','r-lanjing']},
+  {id:'localization', name:'本土化', en:'Localization', core:false, fns:['brand','cmi'],
+   def:'把品牌的产品、审美和叙事调整成适合当地消费者的版本，而不是原样照搬。', from:['r-daofa']},
+  {id:'seeding', name:'种草', en:'Seeding', core:false, fns:['digital'],
+   def:'通过真实感强的内容（笔记、测评、穿搭）让消费者产生兴趣和购买意愿，小红书是最典型的种草平台。', from:[]}
+];
+
+const RESOURCES = [
+  {id:'r-daofa', type:'文章', title:'卡戴珊=新乔丹？NikeSKIMS 能解开耐克的增长死结吗？', source:'刀法研究所 · 作者扰扰', date:'2026-09-29', status:'已读',
+   fns:['brand','trade','pr'], url:'',
+   note:['核心比喻：卡戴珊之于女性运动审美，像乔丹之于篮球鞋，都是“为一个巨头定义它自己无法定义的新市场”。',
+         '女性运动市场真正的增量，是把运动服当日常穿搭主力单品的人；耐克基因是“为赢而设计”，增量人群要的是好看、好搭。',
+         'SKIMS 的核心资产是一套审美体系：优化比例、凸显曲线、包容不同身形。NikeSKIMS 理念“为形而塑，为动而生”。',
+         '产品打法：九大面料系列 + 鞋履 + 配饰的完整穿搭体系，定价 349–1099 元，引导成套消费。',
+         '死结一：基因错位。乔丹的竞技精神与“Just do it”同源，SKIMS 的叙事是悦己和日常生活。',
+         '死结二：海外用户反馈好看上镜，但不适合高强度运动；中国市场还有审美和叙事的水土不服。',
+         '结论：不能复刻 Jordan Brand，但作为细分试验田，可以把女性身体洞察和版型体系反哺耐克主品牌。']},
+  {id:'r-yicai', type:'文章', title:'卡戴珊的网红内衣品牌来了，中国首店选在上海LV大船旁', source:'第一财经', date:'2026-08-09', status:'已读',
+   fns:['brand','trade'], url:'https://www.yicai.com/news/103310970.html',
+   note:['SKIMS 2019 年创立，尺码覆盖 XXS–4XL。','2021 年曾通过连卡佛进入中国，此后两年没有动作。','2025 年 11 月完成 2.25 亿美元融资后估值 50 亿美元。']},
+  {id:'r-huxiu', type:'文章', title:'把店开到LV巨轮旁边，Nike中国为NikeSKIMS花了大钱', source:'虎嗅 · 剁椒Spicy', date:'2026-08-12', status:'已读',
+   fns:['brand','trade'], url:'https://www.huxiu.com/article/4882540.html',
+   note:['耐克大中华区连续八个季度营收下滑，2026 财年同比下滑 11.2%。','NikeSKIMS 海外上市不满一年就进入多轮折扣。','“先名人流量、再验证产品”的路径，和 lululemon“先产品、再社群”的路径相反。']},
+  {id:'r-lanjing', type:'文章', title:'耐克也要抢Lululemon的生意？NikeSKIMS上海开业', source:'蓝鲸财经', date:'2026-09-29', status:'已读',
+   fns:['trade','pr'], url:'https://cj.sina.com.cn/articles/view/5617041192/14ecd3f2802001qiy8',
+   note:['没有高举高打，而是先用慢闪空间测试市场，并推出裁剪服务。','卡戴珊家族访华引发“显化”热潮，餐厅推出同款套餐，德克士跟进玩梗。','同商圈有 Alo 的独栋新店在筹备，女性运动赛道竞争激烈。']},
+  {id:'r-shidai', type:'文章', title:'耐克急了，要抢lululemon生意', source:'时代财经', date:'2025-02-20', status:'已读',
+   fns:['brand'], url:'https://www.cbndata.com/information/293663',
+   note:['NikeSKIMS 是独立新品牌，不是简单的联名系列。','SKIMS 收入从 2020 年 1.45 亿美元增长到 2023 年约 7.5 亿美元。']},
+  {id:'b-hbg', type:'书籍', title:'How Brands Grow', source:'Byron Sharp', date:'', status:'待读', fns:['brand','media','cmi'], url:'', note:[]},
+  {id:'b-luxury', type:'书籍', title:'The Luxury Strategy', source:'Jean-Noël Kapferer, Vincent Bastien', date:'', status:'待读', fns:['brand','trade'], url:'', note:[]},
+  {id:'b-positioning', type:'书籍', title:'定位', source:'艾·里斯, 杰克·特劳特', date:'', status:'待读', fns:['brand'], url:'', note:[]}
+];
+
+/* 正文写法：{{c:概念id}} 生成概念链接，{{r:资料id}} 生成引用角标；brands 里每个品牌都会成为可检索的标签 */
+const WORKS = [
+  {id:'nikeskims', type:'Case 分析', title:'NikeSKIMS 入华：耐克能借卡戴珊拿回女性市场吗？', brands:['NikeSKIMS','Nike','SKIMS'],
+   industry:'sport', fns:['brand','trade','pr'], date:'2026-10-04',
+   concepts:['incremental','cobrand','assortment','popup','celebrity','localization','expectation','positioning','seeding'],
+   resources:['r-daofa','r-huxiu','r-yicai','r-lanjing','r-shidai'],
+   summary:'耐克第一次和外部公司共创新品牌，借 SKIMS 的女性身体审美切入“日常穿搭型”女性运动市场。',
+   tldr:'NikeSKIMS 的价值不在于再造一个乔丹，而在于让耐克低成本测试它一直没抓住的“日常穿搭型”女性用户。在中国，关键是把 SKIMS 张扬的身体审美翻译成本土语境。',
+   sections:[
+    {h:'背景', blocks:[
+      {html:'2025 年 2 月，耐克与 SKIMS 宣布共同创立 NikeSKIMS。这是耐克第一次和外部公司合作打造新品牌，此前它的新品牌要么来自收购，要么来自运动员（如 Jordan Brand）。{{c:cobrand}}{{r:r-shidai}}'},
+      {html:'2026 年春季在美国首发；9 月 29 日，中国首个线下空间在上海兴业太古汇开幕，紧邻 LV“路易号”巨轮，运营到 2027 年 2 月。{{r:r-daofa}}'},
+      {html:'时机很微妙：耐克大中华区已连续八个季度营收下滑，女性运动服又长期被 lululemon、Alo 压制。{{r:r-huxiu}}'}
+    ]},
+    {h:'消费者洞察', blocks:[
+      {ab:'ins', html:'女性运动市场真正的{{c:incremental}}，不是专业运动员，而是把运动服当作日常穿搭主力单品的人。她们要的是上身好看、好搭配，而耐克的基因是“为赢而设计”。{{r:r-daofa}}'},
+      {ab:'ins', html:'SKIMS 卖的其实是一套审美体系：优化比例、凸显曲线、包容不同身形（XXS–4XL）。这正好补上耐克在“普通女性真实身形”上的短板。{{r:r-yicai}}'},
+      {ab:'ins', html:'海外社区的反馈高度一致：单品好看、上镜，但不适合高强度运动，例如七分裤运动时下滑、短裤没有内衬、运动文胸支撑不足。因为有耐克背书，消费者默认它有专业运动性能，落空后的失望更大，这是典型的{{c:expectation}}。{{r:r-daofa}}'},
+      {ab:'ins', html:'到了中国还有一层落差：放大身体曲线的北美式表达，和国内女性“追求体态自信，也看重场合得体”的审美并不完全一致，需要{{c:localization}}。{{r:r-daofa}}'}
+    ]},
+    {h:'策略与执行', blocks:[
+      {ab:'prac', html:'<b>产品：</b>不走 lululemon、Alo 的爆款单品打法，一上来就是九大面料系列 + 鞋履 + 配饰的完整穿搭体系，引导成套购买，提升客单价和{{c:assortment}}。{{r:r-daofa}}'},
+      {ab:'prac', html:'<b>渠道：</b>用五个月的{{c:popup}}先测试市场，而不是直接开正式门店；选址在顶奢商圈，借氛围把“运动塑身衣”重新定义为可以和奢侈品同台的时尚单品。另提供本土独家的裁剪服务。{{r:r-lanjing}}'},
+      {ab:'prac', html:'<b>传播：</b>卡戴珊家族上海行（车队、探店、动物园、迪士尼）持续制造社交热点，餐厅和德克士跟进玩梗。这是{{c:celebrity}}的直接收益。{{r:r-lanjing}}'},
+      {ab:'prac', html:'<b>社群：</b>线下女性社群活动把认同 SKIMS 审美的人聚在一起，产出线上{{c:seeding}}素材。{{r:r-daofa}}'}
+    ]},
+    {h:'关键数据', blocks:[
+      {ab:'data', html:'<div class="tablewrap"><table><thead><tr><th>指标</th><th>数值</th><th>来源</th></tr></thead><tbody>'+
+        '<tr><td>NikeSKIMS 中国定价</td><td>349–1099 元</td><td>{{r:r-daofa}}</td></tr>'+
+        '<tr><td>耐克大中华区 2026 财年营收</td><td>同比 −11.2%</td><td>{{r:r-huxiu}}</td></tr>'+
+        '<tr><td>SKIMS 销售额 2020 → 2023</td><td>1.45 → 约 7.5 亿美元</td><td>{{r:r-shidai}}</td></tr>'+
+        '<tr><td>SKIMS 估值（2025 年 11 月）</td><td>50 亿美元</td><td>{{r:r-yicai}}</td></tr>'+
+        '<tr><td>上海慢闪运营期</td><td>2026.9.29 – 2027.2</td><td>{{r:r-daofa}}</td></tr>'+
+        '</tbody></table></div>'},
+      {ab:'data', html:'目前只是公开数据的汇总。下一步可以抓取小红书上 NikeSKIMS 相关笔记和评论，统计正负面比例，验证“好看但不适合运动”在中国用户里是否同样成立。'}
+    ]},
+    {h:'我的判断与建议', draft:true, blocks:[
+      {html:'<b>判断：</b>同意“不是下一个乔丹”。乔丹的竞技精神和耐克的品牌{{c:positioning}}同源，SKIMS 的叙事是悦己和日常，两者基因错位。但作为试验田，它的价值很大：耐克可以近距离读懂增量女性用户，再反哺主品牌的女性业务。'},
+      {html:'<b>建议一（产品沟通）：</b>在中国把产品明确分成“训练线”和“日常线”，标注适用的运动强度，主动管理预期，避免海外的期望落差重演。'},
+      {html:'<b>建议二（内容）：</b>小红书内容用不同身形的本土 KOC 演示“通勤–健身–约会”一衣多场景，而不是照搬卡戴珊式的张扬曲线。'},
+      {html:'<b>建议三（衡量）：</b>慢闪期间重点追踪试穿转化率、成套购买率和裁剪服务使用率，而不只看销售额，因为这次的目的是测试。'}
+    ]}
+   ]}
+];
+
+/* ================= 渲染 ================= */
+const $ = s=>document.querySelector(s);
+const app = $('#app');
+const fnOf = id=>FUNCTIONS.find(f=>f.id===id);
+const cOf = id=>CONCEPTS.find(c=>c.id===id);
+const rOf = id=>RESOURCES.find(r=>r.id===id);
+const wOf = id=>WORKS.find(w=>w.id===id);
+const byDate = (a,b)=>(b.date||'').localeCompare(a.date||'');   /* 新 → 旧，无日期的排最后 */
+const sortD = arr=>[...arr].sort(byDate);
+const WORKS_SORTED = ()=>sortD(WORKS);
+
+const chip = id=>{const f=fnOf(id);return `<a class="chip fn-${id}" href="#fn-${id}">${f.name}</a>`};
+const indIcon = id=>`<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true">${INDUSTRIES[id].icon}</svg>`;
+const ind = id=>`<span class="ind">${indIcon(id)}${INDUSTRIES[id].name}</span>`;
+const cpt = id=>{const c=cOf(id);return `<a class="cpt" href="#c-${id}"><b>#</b>${c.name}</a>`};
+const band = fns=>`<div class="band">${fns.map(f=>`<span class="fn-${f}"></span>`).join('')}</div>`;
+const worksUsingConcept = cid=>sortD(WORKS.filter(w=>w.concepts.includes(cid)));
+const worksCiting = rid=>sortD(WORKS.filter(w=>w.resources.includes(rid)));
+const conceptsFrom = rid=>CONCEPTS.filter(c=>c.from.includes(rid));
+const empty = t=>`<div class="empty-note">${t}</div>`;
+const brandBtns = w=>w.brands.map(b=>`<button class="brandbtn" data-brand="${b}" title="检索 ${b} 的所有作品">${b}</button>`).join('<span class="faint"> · </span>');
+
+function workCard(w){
+  return `<a class="card" href="#w-${w.id}">${band(w.fns)}<div class="in">
+    <div class="eyebrow">${w.type} · ${w.date}</div>
+    <h3 style="font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.5">${w.title}</h3>
+    <p class="muted" style="font-size:13.5px">${w.summary}</p>
+    <div class="tags"><span class="brandtxt">${w.brands.join(' · ')}</span>${ind(w.industry)}</div>
+    <div class="tags">${w.fns.map(f=>`<span class="chip fn-${f}">${fnOf(f).name}</span>`).join('')}</div>
+    <div class="tags">${w.concepts.slice(0,4).map(c=>`<span class="cpt"><b>#</b>${cOf(c).name}</span>`).join('')}${w.concepts.length>4?`<span class="faint" style="font-size:12px">+${w.concepts.length-4}</span>`:''}</div>
+  </div></a>`;
+}
+function resRow(r){
+  return `<a class="row" href="#r-${r.id.slice(2)}"><div class="rt"><div>${r.title}</div><div class="faint" style="font-size:12.5px">${r.source}${r.date?' · '+r.date:''}</div></div><span class="count">${r.type} · ${r.status}</span></a>`;
+}
+function conceptRow(c){
+  const n=worksUsingConcept(c.id).length, m=c.from.length;
+  return `<a class="row" href="#c-${c.id}"><div class="rt"><div><span class="faint">#</span>${c.name} <span class="faint" style="font-family:var(--mono);font-size:11.5px">${c.en}</span></div></div><span class="count">学自 ${m} · 用于 ${n}</span></a>`;
+}
+function subnav(on){
+  return `<div class="subnav">${[['notes','职能分支'],['concepts','概念词典'],['library','资料库']].map(([h,t])=>`<a href="#${h}" class="${on===h?'on':''}">${t}</a>`).join('')}</div>`;
+}
+
+/* 首页 */
+function home(){
+  const ws=WORKS_SORTED();
+  return `<section class="hero"><div class="eyebrow">Marketing notebook · since 2026.10</div>
+    <h1>从零系统学习 marketing 的手记</h1>
+    <p class="muted">左边记知识，右边做案例。每篇案例都标注用到了哪些概念、引用了哪些资料；每个概念也能看到它被用在了哪里。</p></section>
+  <div class="grid-2" style="margin-top:26px">
+    <div class="wing"><div class="eyebrow">左 · 输入</div><h2><a href="#notes">学习笔记</a></h2>
+      <p class="big">${FUNCTIONS.length} 个职能分支 · ${CONCEPTS.length} 个概念 · ${RESOURCES.length} 份资料</p>
+      <div class="tags">${FUNCTIONS.map(f=>chip(f.id)).join('')}</div>
+      <div class="tags" style="gap:8px 16px"><a class="cpt" href="#concepts">概念词典 →</a><a class="cpt" href="#library">资料库 →</a></div></div>
+    <div class="wing"><div class="eyebrow">右 · 输出</div><h2><a href="#works">作品集</a></h2>
+      <p class="big">${WORKS.length} 篇作品 · 品牌拆解 / Case 分析 / AI 实操 / 数据分析</p>
+      ${ws.slice(0,3).map(w=>`<a class="row" href="#w-${w.id}" style="padding-top:4px"><div class="rt">${w.title}</div><span class="count">${w.date}</span></a>`).join('')}
+      <a class="cpt" href="#works">按标签检索作品 →</a></div>
+  </div>
+  <div class="section"><div class="section-head"><h2>标签怎么读</h2></div>
+    <div class="legend">
+      <div><span class="faint">职能 → 颜色</span><div class="tags">${chip('brand')}${chip('digital')}</div></div>
+      <div><span class="faint">行业 → 图标</span><div class="tags">${ind('sport')}${ind('beauty')}${ind('luxury')}${ind('fmcg')}</div></div>
+      <div><span class="faint">概念 → #话题</span><div class="tags">${cpt('incremental')}${cpt('positioning')}</div></div>
+      <div><span class="faint">品牌 → 文字</span><div class="tags"><span class="brandtxt">NikeSKIMS</span></div></div>
+      <div><span class="faint">能力 → 正文段落色块</span><div class="tags">${Object.entries(ABILITIES).map(([k,v])=>`<span class="abkey ab-${k}"><i></i>${v}</span>`).join('')}</div></div>
+    </div></div>`;
+}
+
+/* 学习笔记：职能分支 */
+function notes(){
+  const core=CONCEPTS.filter(c=>c.core);
+  return `${subnav('notes')}<div class="section" style="margin-top:22px"><div class="section-head"><h2>职能分支</h2><span class="faint" style="font-size:13px">每个分支：做什么 · 关键指标 · 工具 · AI 的影响 · 我的笔记</span></div>
+    <div class="grid">${FUNCTIONS.map(f=>{
+      const nc=CONCEPTS.filter(c=>c.fns.includes(f.id)).length, nr=RESOURCES.filter(r=>r.fns.includes(f.id)).length, nw=WORKS.filter(w=>w.fns.includes(f.id)).length;
+      return `<a class="card fn-tile fn-${f.id}" href="#fn-${f.id}"><div class="in"><span class="en">${f.en}</span><h3 style="font-size:16px">${f.name}</h3><span class="count">概念 ${nc} · 资料 ${nr} · 作品 ${nw}</span></div></a>`}).join('')}</div></div>
+  <div class="section"><div class="section-head"><h2>核心基础</h2><span class="faint" style="font-size:13px">所有分支通用</span></div>
+    <div class="list-plain">${core.map(conceptRow).join('')}</div></div>`;
+}
+
+function fnPage(id){
+  const f=fnOf(id); if(!f) return notFound();
+  const cs=CONCEPTS.filter(c=>c.fns.includes(id)), rs=sortD(RESOURCES.filter(r=>r.fns.includes(id))), ws=sortD(WORKS.filter(w=>w.fns.includes(id)));
+  return `${subnav('notes')}<div class="detail-head fn-${id}" style="margin-top:22px;border-top:6px solid var(--b);padding-top:20px">
+    <span class="eyebrow" style="color:var(--i)">${f.en}</span><h1>${f.name}</h1><p class="muted prose">${f.what}</p></div>
+  <div class="grid-2" style="margin-top:8px">
+    <div class="section"><div class="section-head"><h2>关键指标</h2></div><div class="metrics">${f.metrics.map(m=>`<span class="metric">${m}</span>`).join('')}</div></div>
+    <div class="section"><div class="section-head"><h2>常用工具</h2></div><div class="metrics">${f.tools.map(m=>`<span class="metric">${m}</span>`).join('')}</div></div>
+  </div>
+  <div class="section"><div class="section-head"><h2>AI 如何改变这个岗位</h2></div><p class="prose">${f.ai}</p></div>
+  <div class="section"><div class="section-head"><h2>我的笔记</h2></div>${empty('还没有笔记。读完相关资料后，把这个岗位的要点和自己的理解记在这里。')}</div>
+  <div class="section"><div class="section-head"><h2>相关概念</h2><span class="count">${cs.length}</span></div>${cs.length?`<div class="list-plain">${cs.map(conceptRow).join('')}</div>`:empty('还没有归到这个分支的概念。')}</div>
+  <div class="section"><div class="section-head"><h2>相关资料</h2><span class="count">${rs.length}</span></div>${rs.length?`<div class="list-plain">${rs.map(resRow).join('')}</div>`:empty('还没有相关资料。')}</div>
+  <div class="section"><div class="section-head"><h2>我的相关作品</h2><span class="count">${ws.length}</span></div>${ws.length?`<div class="grid">${ws.map(workCard).join('')}</div>`:empty('还没有这个方向的作品。')}</div>`;
+}
+
+function concepts(){
+  const core=CONCEPTS.filter(c=>c.core), rest=CONCEPTS.filter(c=>!c.core);
+  return `${subnav('concepts')}<div class="section" style="margin-top:22px"><div class="section-head"><h2>概念词典</h2><span class="faint" style="font-size:13px">每个概念一页：定义 · 学自哪份资料 · 用在哪篇作品</span></div>
+    <h3 class="faint" style="margin-top:6px">核心基础</h3><div class="list-plain">${core.map(conceptRow).join('')}</div>
+    <h3 class="faint" style="margin-top:18px">职能与实战</h3><div class="list-plain">${rest.map(conceptRow).join('')}</div></div>`;
+}
+
+function conceptPage(id){
+  const c=cOf(id); if(!c) return notFound();
+  const ws=worksUsingConcept(id), rs=sortD(c.from.map(rOf));
+  const uses=ws.map(w=>{const secs=w.sections.filter(s=>s.blocks.some(b=>b.html.includes('{{c:'+id+'}}'))).map(s=>s.h);return `<a class="row" href="#w-${w.id}"><div class="rt">${w.title}</div><span class="count">${secs.length?'出现在：'+secs.join('、'):w.type}</span></a>`}).join('');
+  return `${subnav('concepts')}<div class="detail-head" style="margin-top:22px"><span class="eyebrow">${c.core?'核心基础 · ':''}${c.en}</span><h1><span class="faint">#</span>${c.name}</h1>
+    <p class="prose" style="font-size:16px">${c.def}</p><div class="tags">${c.fns.map(chip).join('')}</div></div>
+  <div class="grid-2">
+    <div class="section"><div class="section-head"><h2>学自</h2><span class="count">${rs.length}</span></div>${rs.length?`<div class="list-plain">${rs.map(resRow).join('')}</div>`:empty('还没有关联资料。读到讲这个概念的书或文章时，把它加进来。')}</div>
+    <div class="section"><div class="section-head"><h2>用在</h2><span class="count">${ws.length}</span></div>${ws.length?`<div class="list-plain">${uses}</div>`:empty('还没有作品用到这个概念。')}</div>
+  </div>`;
+}
+
+let libFilter='全部';
+function library(){
+  const types=['全部','书籍','文章','报告'];
+  const rs=sortD(RESOURCES.filter(r=>libFilter==='全部'||r.type===libFilter));
+  return `${subnav('library')}<div class="section" style="margin-top:22px"><div class="section-head"><h2>资料库</h2><span class="faint" style="font-size:13px">按时间从新到旧，未读的书排在最后</span></div>
+    <div class="fgroup">${types.map(t=>`<button class="f ${libFilter===t?'on':''}" data-lib="${t}">${t}</button>`).join('')}</div>
+    ${rs.length?`<div class="list-plain">${rs.map(resRow).join('')}</div>`:empty(`还没有${libFilter}笔记。读完第一份后，在数据里加一条 type 为“${libFilter}”的记录。`)}</div>`;
+}
+
+function resPage(key){
+  const r=rOf('r-'+key)||rOf('b-'+key); if(!r) return notFound();
+  const ws=worksCiting(r.id), cs=conceptsFrom(r.id);
+  return `${subnav('library')}<div class="detail-head" style="margin-top:22px"><span class="eyebrow">${r.type} · ${r.status}</span><h1>${r.title}</h1>
+    <dl class="kv"><dt>来源</dt><dd>${r.source}</dd>${r.date?`<dt>日期</dt><dd>${r.date}</dd>`:''}${r.url?`<dt>原文</dt><dd><a href="${r.url}" target="_blank" rel="noopener">打开原文 ↗</a></dd>`:''}<dt>职能</dt><dd><div class="tags">${r.fns.map(chip).join('')}</div></dd></dl></div>
+  <div class="section"><div class="section-head"><h2>我的笔记</h2></div>${r.note.length?`<div class="prose"><ul>${r.note.map(n=>`<li>${n}</li>`).join('')}</ul></div>`:empty('还没读。读完后把要点和自己的看法记在这里，再把提炼出的概念加进概念词典。')}</div>
+  <div class="grid-2">
+    <div class="section"><div class="section-head"><h2>提炼出的概念</h2><span class="count">${cs.length}</span></div>${cs.length?`<div class="tags">${cs.map(c=>cpt(c.id)).join('')}</div>`:empty('暂无。')}</div>
+    <div class="section"><div class="section-head"><h2>被这些作品引用</h2><span class="count">${ws.length}</span></div>${ws.length?`<div class="list-plain">${ws.map(w=>`<a class="row" href="#w-${w.id}"><div class="rt">${w.title}</div><span class="count">${w.type}</span></a>`).join('')}</div>`:empty('暂无作品引用。')}</div>
+  </div>`;
+}
+
+/* ===== 作品集 + 标签检索 =====
+   规则：不同类标签之间是“并且”；同一类里默认“满足任一”，可切换为“全部满足”（只作用于品牌、职能、概念）。 */
+const TYPES=['品牌拆解','Case 分析','AI 实操','数据分析'];
+const S={brand:new Set(),fn:new Set(),ind:new Set(),cpt:new Set(),type:new Set(),mode:'any',q:''};
+const GROUPS=[
+  {k:'brand', lab:'品牌', opts:()=>[...new Set(WORKS.flatMap(w=>w.brands))].sort().map(b=>({v:b,label:b,n:WORKS.filter(w=>w.brands.includes(b)).length}))},
+  {k:'fn', lab:'职能', opts:()=>FUNCTIONS.map(f=>({v:f.id,label:f.name,alt:f.en,n:WORKS.filter(w=>w.fns.includes(f.id)).length}))},
+  {k:'ind', lab:'行业', opts:()=>Object.entries(INDUSTRIES).map(([k,v])=>({v:k,label:v.name,n:WORKS.filter(w=>w.industry===k).length}))},
+  {k:'cpt', lab:'概念', opts:()=>CONCEPTS.map(c=>({v:c.id,label:c.name,alt:c.en,n:WORKS.filter(w=>w.concepts.includes(c.id)).length})).filter(o=>o.n>0)},
+  {k:'type', lab:'类型', opts:()=>TYPES.map(t=>({v:t,label:t,n:WORKS.filter(w=>w.type===t).length}))}
+];
+const tagsOf=(w,k)=>({brand:w.brands,fn:w.fns,ind:[w.industry],cpt:w.concepts,type:[w.type]})[k];
+function matches(w){
+  return GROUPS.every(g=>{const sel=[...S[g.k]]; if(!sel.length) return true; const t=tagsOf(w,g.k);
+    return (S.mode==='all'&&['brand','fn','cpt'].includes(g.k))?sel.every(v=>t.includes(v)):sel.some(v=>t.includes(v));});
+}
+const anySel=()=>GROUPS.some(g=>S[g.k].size);
+function labelOf(k,v){ if(k==='fn') return fnOf(v).name; if(k==='ind') return INDUSTRIES[v].name; if(k==='cpt') return '#'+cOf(v).name; return v; }
+
+function optsHTML(){
+  const q=S.q.trim().toLowerCase();
+  return GROUPS.map(g=>{
+    const os=g.opts().filter(o=>!q||o.label.toLowerCase().includes(q)||(o.alt||'').toLowerCase().includes(q));
+    if(!os.length) return '';
+    return `<div class="ogroup"><span class="lab">${g.lab}</span><div class="opts">${os.map(o=>{
+      const on=S[g.k].has(o.v);
+      const cls=g.k==='fn'?`fo fn-${o.v}`:g.k==='cpt'?'cp':'';
+      const pre=g.k==='fn'?'<span class="dot"></span>':g.k==='ind'?indIcon(o.v):g.k==='cpt'?'<b>#</b>':'';
+      return `<button class="opt ${cls} ${on?'on':''}" data-g="${g.k}" data-v="${o.v}" aria-pressed="${on}">${pre}${o.label}<span class="n">${o.n}</span></button>`}).join('')}</div></div>`;
+  }).join('') || `<p class="faint" style="font-size:13px">没有匹配“${S.q}”的标签。</p>`;
+}
+function selHTML(){
+  if(!anySel()) return `<span class="hint">选择下面的标签开始筛选。同一类标签可以多选。</span>`;
+  const chips=GROUPS.flatMap(g=>[...S[g.k]].map(v=>`<button class="sel ${g.k==='fn'?'fnsel fn-'+v:''}" data-rm="${g.k}" data-v="${v}" title="移除">${labelOf(g.k,v)}<span class="x" aria-hidden="true">×</span></button>`)).join('');
+  return `${chips}<button class="linkbtn" data-clear="1">清除全部</button>
+    <div class="mode" role="group" aria-label="同类标签匹配方式"><button data-mode="any" class="${S.mode==='any'?'on':''}">同类满足任一</button><button data-mode="all" class="${S.mode==='all'?'on':''}">同类全部满足</button></div>`;
+}
+function resultsHTML(){
+  const ws=WORKS_SORTED().filter(matches);
+  const head=`<div class="resultbar"><h2>${anySel()?'检索结果':'全部作品'}</h2><span class="count">${ws.length} 篇 · 按时间从新到旧</span></div>`;
+  if(!ws.length) return head+`<div style="margin-top:16px">${empty('没有同时符合这些标签的作品。试着去掉一个标签，或切换为“同类满足任一”。')}</div>`;
+  return head+`<div class="grid" style="margin-top:18px">${ws.map(workCard).join('')}${anySel()?'':`<div class="card empty"><div class="in" style="align-items:flex-start"><span class="eyebrow">下一篇</span><p class="muted" style="font-size:13.5px">在数据里的 WORKS 加一条，卡片、检索标签和所有交叉链接会自动出现。</p></div></div>`}</div>`;
+}
+function works(){
+  return `<div class="hero" style="padding-top:4px"><h1>作品集</h1><p class="muted">品牌拆解、Case 分析、AI 实操和数据分析。卡片顶部的色带代表涉及的职能。</p></div>
+  <div class="search" style="margin-top:20px">
+    <input type="search" id="tagq" placeholder="搜索标签：Nike、品牌管理、增量人群……" value="${S.q}" autocomplete="off" aria-label="搜索标签">
+    <div class="selbar" id="selbar">${selHTML()}</div>
+    <div class="stack" id="opts" style="gap:10px">${optsHTML()}</div>
+  </div>
+  <div id="results">${resultsHTML()}</div>`;
+}
+function refreshSearch(){ $('#selbar').innerHTML=selHTML(); $('#opts').innerHTML=optsHTML(); $('#results').innerHTML=resultsHTML(); }
+
+function renderText(t,w){
+  return t.replace(/\{\{c:([\w-]+)\}\}/g,(_,id)=>{const c=cOf(id);return c?`<a class="inl" href="#c-${id}"><b>#</b>${c.name}</a>`:''})
+          .replace(/\{\{r:([\w-]+)\}\}/g,(_,id)=>{const n=w.resources.indexOf(id)+1;return n?`<sup><a href="#r-${id.slice(2)}" title="${rOf(id).title}">[${n}]</a></sup>`:''});
+}
+function workPage(id){
+  const w=wOf(id); if(!w) return notFound();
+  const counts={ins:0,prac:0,data:0}; w.sections.forEach(s=>s.blocks.forEach(b=>{if(b.ab)counts[b.ab]++}));
+  const related=sortD(WORKS.filter(x=>x.id!==w.id&&x.brands.some(b=>w.brands.includes(b))));
+  return `<div class="detail-head"><span class="eyebrow">${w.type} · ${w.date}</span><h1>${w.title}</h1>
+    <div class="tags">${brandBtns(w)}${ind(w.industry)}${w.fns.map(chip).join('')}</div></div>
+  <div class="case" style="margin-top:28px">
+    <article id="art" class="stack" style="gap:30px">
+      <p class="tldr">${w.tldr}</p>
+      <div class="abbar"><span class="faint" style="font-size:12.5px">按能力查看：</span>${Object.entries(ABILITIES).map(([k,v])=>`<button class="abbtn ab-${k}" data-ab="${k}"><i></i>${v}<span>${counts[k]}</span></button>`).join('')}</div>
+      ${w.sections.map((s,i)=>`<section class="csec" id="s${i}"><h2>${s.h}${s.draft?'<span class="draft">草稿 · 待改写</span>':''}</h2>
+        ${s.blocks.map(b=>`<div class="blk ${b.ab?'ab ab-'+b.ab:''}">${b.ab?`<span class="ablab">${ABILITIES[b.ab]}</span>`:''}${renderText(b.html,w)}</div>`).join('')}</section>`).join('')}
+      <section class="csec"><h2>参考资料</h2><ol class="refs">${w.resources.map(rid=>{const r=rOf(rid);return `<li><a href="#r-${rid.slice(2)}" style="text-decoration:none">${r.source}《${r.title}》${r.date?'，'+r.date:''}</a></li>`}).join('')}</ol></section>
+      <section class="csec"><h2>同系列作品</h2>${related.length?`<div class="grid">${related.map(workCard).join('')}</div>`:empty('还没有同品牌的其他作品。可以接着做“关键数据”里提到的小红书评论分析，作为这个系列的第二篇。')}</section>
+    </article>
+    <aside>
+      <div><h3>目录</h3><nav class="toc">${w.sections.map((s,i)=>`<a href="javascript:void(0)" data-jump="s${i}">${s.h}</a>`).join('')}</nav></div>
+      <div><h3>品牌 · 点击检索</h3><div class="tags">${brandBtns(w)}</div></div>
+      <div><h3>用到的概念</h3><div class="tags">${w.concepts.map(cpt).join('')}</div></div>
+      <div><h3>涉及职能</h3><div class="tags">${w.fns.map(chip).join('')}</div></div>
+    </aside>
+  </div>`;
+}
+
+function notFound(){return `<div class="hero"><h1>没有找到这一页</h1><p class="muted"><a href="#home">回到首页</a></p></div>`}
+
+function route(){
+  const h=(location.hash||'#home').slice(1);
+  let html, nav='home';
+  if(h==='home'||h==='') html=home();
+  else if(h==='notes'){html=notes();nav='notes'}
+  else if(h==='concepts'){html=concepts();nav='notes'}
+  else if(h==='library'){html=library();nav='notes'}
+  else if(h.startsWith('fn-')){html=fnPage(h.slice(3));nav='notes'}
+  else if(h.startsWith('c-')){html=conceptPage(h.slice(2));nav='notes'}
+  else if(h.startsWith('r-')){html=resPage(h.slice(2));nav='notes'}
+  else if(h==='works'){html=works();nav='works'}
+  else if(h.startsWith('w-')){html=workPage(h.slice(2));nav='works'}
+  else html=notFound();
+  app.innerHTML=html;
+  document.querySelectorAll('nav.main a').forEach(a=>a.classList.toggle('on',a.dataset.nav===nav));
+  window.scrollTo(0,0);
+}
+app.addEventListener('click',e=>{
+  const lib=e.target.closest('[data-lib]'); if(lib){libFilter=lib.dataset.lib;app.innerHTML=library();return}
+  const o=e.target.closest('[data-g]'); if(o){const s=S[o.dataset.g],v=o.dataset.v; s.has(v)?s.delete(v):s.add(v); refreshSearch(); return}
+  const rm=e.target.closest('[data-rm]'); if(rm){S[rm.dataset.rm].delete(rm.dataset.v); refreshSearch(); return}
+  if(e.target.closest('[data-clear]')){GROUPS.forEach(g=>S[g.k].clear()); refreshSearch(); return}
+  const md=e.target.closest('[data-mode]'); if(md){S.mode=md.dataset.mode; refreshSearch(); return}
+  const br=e.target.closest('[data-brand]'); if(br){GROUPS.forEach(g=>S[g.k].clear()); S.q=''; S.brand.add(br.dataset.brand);
+    if(location.hash==='#works') route(); else location.hash='works'; return}
+  const ab=e.target.closest('[data-ab]'); if(ab){const art=$('#art'),k=ab.dataset.ab,on=ab.classList.contains('on');
+    document.querySelectorAll('.abbtn').forEach(b=>b.classList.remove('on')); art.className='stack focus';
+    if(!on){ab.classList.add('on');art.classList.add('focus-'+k)} return}
+  const j=e.target.closest('[data-jump]'); if(j){e.preventDefault();document.getElementById(j.dataset.jump).scrollIntoView({behavior:'smooth'})}
+});
+app.addEventListener('input',e=>{ if(e.target.id==='tagq'){S.q=e.target.value; $('#opts').innerHTML=optsHTML();} });
+window.addEventListener('hashchange',route);
+route();
+</script>
+<style>
+/* 网站助教：右下角唤起，桌面为浮动面板，手机为底部抽屉 */
+.coach-fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:20;font:inherit;font-size:14px;display:inline-flex;align-items:center;gap:8px;padding:11px 18px 11px 14px;border-radius:999px;border:none;background:var(--ink);color:var(--bg);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.coach-fab .av{width:24px;height:24px;border-radius:50%;background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:10.5px;font-weight:500;display:grid;place-items:center;letter-spacing:.02em}
+.coach{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:21;width:min(400px,calc(100vw - 32px));height:min(600px,calc(100vh - 110px));background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 48px rgba(0,0,0,.14);display:flex;flex-direction:column;overflow:hidden}
+.coach-head{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.coach-head .av{width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:11px;font-weight:500;display:grid;place-items:center;flex:none}
+.coach-head .who{flex:1;min-width:0;line-height:1.35}
+.coach-head .who b{font-weight:500;font-size:14px;display:block}
+.coach-head .who span{font-size:11.5px;color:var(--ink-3)}
+.iconbtn{font:inherit;font-size:12px;background:none;border:1px solid var(--line);color:var(--ink-2);border-radius:999px;padding:3px 10px;cursor:pointer}
+.iconbtn:hover{border-color:var(--ink-3);color:var(--ink)}
+.coach-log{flex:1;overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.7}
+.msg{max-width:88%;min-width:0;overflow-wrap:anywhere}
+.msg.me{align-self:flex-end;background:var(--ink);color:var(--bg);padding:8px 13px;border-radius:14px 14px 4px 14px;white-space:pre-wrap}
+.msg.bot{align-self:flex-start;background:var(--bg);border:1px solid var(--line);padding:10px 14px;border-radius:14px 14px 14px 4px}
+.msg.bot p{margin:0}
+.msg.bot p+p,.msg.bot p+ul,.msg.bot p+ol,.msg.bot ul+p,.msg.bot ol+p{margin-top:8px}
+.msg.bot ul,.msg.bot ol{margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:3px}
+.msg.bot a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--ink-3)}
+.msg.bot .thinking{color:var(--ink-3)}
+.msg.note{align-self:center;font-size:12.5px;color:var(--ink-3);text-align:center;max-width:100%}
+.coach-intro{display:flex;flex-direction:column;gap:10px}
+.coach-intro p{font-size:13.5px;color:var(--ink-2)}
+.sugg{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.sugg button{font:inherit;font-size:13px;text-align:left;background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:7px 11px;cursor:pointer}
+.sugg button:hover{border-color:var(--ink-3)}
+.coach-form{display:flex;gap:8px;padding:10px 12px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);align-items:flex-end}
+.coach-form textarea{flex:1;min-width:0;font:inherit;font-size:14px;line-height:1.5;resize:none;border:1px solid var(--line);border-radius:10px;padding:8px 11px;background:var(--bg);color:var(--ink);max-height:120px}
+.coach-form textarea:focus{outline:none;border-color:var(--ink-3)}
+.coach-form button{font:inherit;font-size:13.5px;border:none;border-radius:10px;padding:9px 14px;background:var(--ink);color:var(--bg);cursor:pointer;flex:none}
+.coach-form button.stop{background:transparent;color:var(--ink);border:1px solid var(--ink-3)}
+.coach-err{font-size:12px;color:var(--ink-2);padding:0 14px 6px}
+@media (max-width:560px){.coach{right:0;left:0;bottom:0;width:100%;height:min(82vh,640px);border-radius:16px 16px 0 0;border-bottom:none}}
+</style>
+
+<button class="coach-fab" id="coachFab" hidden aria-label="打开网站助教"><span class="av">A</span>问助教</button>
+<section class="coach" id="coach" hidden aria-label="网站助教">
+  <div class="coach-head">
+    <span class="av">A</span>
+    <div class="who"><b>Ayato</b></div>
+    <button class="iconbtn" id="coachClear">清空</button>
+    <button class="iconbtn" id="coachClose" aria-label="关闭">收起</button>
+  </div>
+  <div class="coach-log" id="coachLog" aria-live="polite"></div>
+  <div class="coach-err" id="coachErr" hidden></div>
+  <form class="coach-form" id="coachForm">
+    <textarea id="coachInput" rows="1" placeholder="问网站里的任何内容"></textarea>
+    <button type="submit" id="coachSend">发送</button>
+  </form>
+</section>
+
+<script>
+(function(){
+  const fab=document.getElementById('coachFab'), panel=document.getElementById('coach'), log=document.getElementById('coachLog'),
+        form=document.getElementById('coachForm'), input=document.getElementById('coachInput'), sendBtn=document.getElementById('coachSend'),
+        errBox=document.getElementById('coachErr');
+  let sample=null, turns=[], ctl=null, busy=false;
+
+  /* ---- 把网站数据整理成助教能读的资料 ---- */
+  const strip=s=>s.replace(/\{\{c:([\w-]+)\}\}/g,(_,id)=>{const c=CONCEPTS.find(x=>x.id===id);return c?c.name:''})
+                  .replace(/\{\{r:[\w-]+\}\}/g,'').replace(/<\/(td|th)>/g,' | ').replace(/<\/tr>/g,'\n').replace(/<[^>]+>/g,'').replace(/[ \t]+/g,' ').trim();
+  const fnName=id=>(FUNCTIONS.find(f=>f.id===id)||{}).name||id;
+  const cName=id=>(CONCEPTS.find(c=>c.id===id)||{}).name||id;
+  function siteContext(){
+    const L=[];
+    L.push('## 页面导航 id\nhome 首页；notes 职能分支；concepts 概念词典；library 资料库；works 作品集与标签检索');
+    L.push('## 职能分支（8 个）');
+    FUNCTIONS.forEach(f=>L.push(`- [fn-${f.id}] ${f.name}（${f.en}）：${f.what} 关键指标：${f.metrics.join('、')}。常用工具：${f.tools.join('、')}。AI 影响：${f.ai} 我的笔记：还没写。`));
+    L.push('## 概念词典');
+    CONCEPTS.forEach(c=>{const used=WORKS.filter(w=>w.concepts.includes(c.id)).map(w=>w.title);
+      L.push(`- [c-${c.id}] ${c.name}（${c.en}）${c.core?'【核心基础】':''}：${c.def} 所属职能：${c.fns.map(fnName).join('、')}。学自：${c.from.map(r=>(RESOURCES.find(x=>x.id===r)||{}).title).filter(Boolean).join('；')||'暂无'}。用于作品：${used.join('；')||'暂无'}。`)});
+    L.push('## 资料库');
+    RESOURCES.forEach(r=>L.push(`- [r-${r.id.slice(2)}] ${r.type}《${r.title}》，${r.source}${r.date?'，'+r.date:''}，状态：${r.status}。职能：${r.fns.map(fnName).join('、')}。笔记：${r.note.length?r.note.join(' / '):'还没有笔记'}`));
+    L.push('## 作品集');
+    WORKS.forEach(w=>{
+      L.push(`### [w-${w.id}] ${w.title}\n类型：${w.type}；日期：${w.date}；品牌：${w.brands.join('、')}；行业：${INDUSTRIES[w.industry].name}；职能：${w.fns.map(fnName).join('、')}；概念：${w.concepts.map(cName).join('、')}\n一句话结论：${w.tldr}`);
+      w.sections.forEach(s=>L.push(`【${s.h}${s.draft?'（草稿，待改写）':''}】\n`+s.blocks.map(b=>`${b.ab?'('+ABILITIES[b.ab]+') ':''}${strip(b.html)}`).join('\n')));
+    });
+    return L.join('\n');
+  }
+  function rules(){
+    const where=(location.hash||'#home').slice(1);
+    return `你是个人学习网站「营销手记」里内置的助教 Ayato。网站主人正在从零系统学习 marketing，并用这个网站记录学习笔记和作品集。
+
+【性格与语气】你是 ESTJ 型的带教前辈：务实、直接、讲效率、重结构和执行。
+- 先给结论，再分点说明，常用“第一、第二”。
+- 每次回答尽量落到一个明确的下一步行动，必要时排优先级。
+- 不寒暄、不说空话、不过度夸奖；发现问题直接指出，但不刻薄。
+- 默认简洁，一般 200 字以内；对方要求展开时再展开。
+
+【回答依据】
+- 以下面的「网站数据」为准回答网站相关的问题。网站里没有的内容，直接说“网站里还没有这部分”，不要编造作品、笔记、数据或阅读状态。
+- 可以补充通用营销知识，但要在那句话后标注“（网站外的通用知识）”。
+- 提到网站里的页面时，用 [[页面id|显示文字]] 的格式写成链接，例如 [[c-incremental|增量人群]]、[[w-nikeskims|NikeSKIMS 案例]]。只能使用网站数据里方括号中出现过的 id，或 home、notes、concepts、library、works。
+- 格式只用段落、**加粗**、以“- ”或“1. ”开头的列表。不要用标题、表格或代码块。
+
+用户当前正在看的页面 id：${where}
+
+【网站数据】
+${siteContext()}`;
+  }
+
+  /* ---- 渲染回答：转义后只支持链接、加粗和列表 ---- */
+  const VALID=()=>new Set(['home','notes','concepts','library','works',...FUNCTIONS.map(f=>'fn-'+f.id),...CONCEPTS.map(c=>'c-'+c.id),...RESOURCES.map(r=>'r-'+r.id.slice(2)),...WORKS.map(w=>'w-'+w.id)]);
+  const esc=s=>s.replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+  function inline(s,valid){
+    return esc(s).replace(/\[\[([\w-]+)\|([^\]]+)\]\]/g,(m,id,t)=>valid.has(id)?`<a href="#${id}">${t}</a>`:t)
+                 .replace(/\[\[([\w-]+)\]\]/g,(m,id)=>valid.has(id)?`<a href="#${id}">${id}</a>`:'')
+                 .replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>');
+  }
+  function render(md){
+    const valid=VALID(), out=[]; let list=null;
+    md.split('\n').forEach(raw=>{
+      const line=raw.trim(), ul=line.match(/^[-•]\s+(.*)/), ol=line.match(/^\d+[.、]\s*(.*)/);
+      if(ul||ol){const tag=ul?'ul':'ol'; if(!list||list.tag!==tag){list={tag,items:[]};out.push(list)} list.items.push(inline((ul||ol)[1],valid)); return}
+      list=null; if(line) out.push(`<p>${inline(line.replace(/^#+\s*/,''),valid)}</p>`);
+    });
+    return out.map(x=>typeof x==='string'?x:`<${x.tag}>${x.items.map(i=>`<li>${i}</li>`).join('')}</${x.tag}>`).join('');
+  }
+
+  /* ---- 界面 ---- */
+  const SUGG=['NikeSKIMS 这篇案例用到了哪些概念？','资料库里哪些我还没读？先读哪本？','我下一篇作品该做什么？'];
+  function intro(){
+    log.innerHTML=`<div class="coach-intro"><p>我是 Ayato。网站里的笔记、概念、资料和作品我都看过，直接问。</p>
+      <div class="sugg">${SUGG.map(q=>`<button type="button" data-q="${q}">${q}</button>`).join('')}</div></div>`;
+  }
+  function add(cls,html){const d=document.createElement('div');d.className='msg '+cls;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+  function setBusy(b){busy=b;sendBtn.textContent=b?'停止':'发送';sendBtn.classList.toggle('stop',b);sendBtn.type=b?'button':'submit'}
+  function showErr(t){errBox.textContent=t;errBox.hidden=!t}
+  const COPY={rate_limited:'问得太频繁或已达到用量上限，稍后再试。',session_expired:'登录已过期，请重新登录 claude.ai。',refused:'这个问题我没法回答，换个问法。',
+    empty_completion:'没有得到回答，换个更具体的问法。',prompt_too_large:'对话太长了，点“清空”重新开始。'};
+
+  async function ask(q){
+    if(busy||!q.trim()) return;
+    showErr('');
+    if(log.querySelector('.coach-intro')) log.innerHTML='';
+    add('me',esc(q));
+    turns.push({role:'user',content:q});
+    if(turns.length>16) turns=turns.slice(-16);
+    while(turns.length&&turns[0].role!=='user') turns.shift();
+    const bubble=add('bot','<span class="thinking">思考中…</span>');
+    ctl=new AbortController(); setBusy(true);
+    try{
+      const {text,truncated}=await sample([{role:'user',content:rules()},...turns],{cache:false,signal:ctl.signal,
+        onText:({text})=>{bubble.innerHTML=render(text);log.scrollTop=log.scrollHeight}});
+      bubble.innerHTML=render(text)+(truncated?'<p class="thinking">（回答被截断了，可以让我继续。）</p>':'');
+      turns.push({role:'assistant',content:text});
+    }catch(e){
+      const code=e&&e.code;
+      if(e&&e.text){bubble.innerHTML=render(e.text)+'<p class="thinking">（已中断）</p>';turns.push({role:'assistant',content:e.text})}
+      else {bubble.remove();turns.pop()}
+      if(['not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed'].includes(code)){
+        add('note','这个页面没有获得使用 Claude 的许可，助教已关闭。可以在页面的权限菜单里重新允许。');form.hidden=true;
+      } else if(code!=='cancelled') showErr(COPY[code]||'连接出了问题，再发一次试试。');
+    }finally{setBusy(false);ctl=null}
+  }
+
+  fab.onclick=()=>{panel.hidden=false;fab.hidden=true;if(!log.children.length)intro();input.focus()};
+  document.getElementById('coachClose').onclick=()=>{panel.hidden=true;fab.hidden=false};
+  document.getElementById('coachClear').onclick=()=>{if(ctl)ctl.abort();turns=[];showErr('');intro()};
+  sendBtn.addEventListener('click',e=>{if(busy){e.preventDefault();ctl&&ctl.abort()}});
+  form.addEventListener('submit',e=>{e.preventDefault();const q=input.value;input.value='';input.style.height='';ask(q)});
+  input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();form.requestSubmit()}});
+  input.addEventListener('input',()=>{input.style.height='auto';input.style.height=Math.min(input.scrollHeight,120)+'px';showErr('')});
+  log.addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(b)ask(b.dataset.q)});
+
+  /* 只有在 claude.ai 里打开时才有助教；其他地方自动隐藏 */
+  if(window.claude&&window.claude.use){
+    window.claude.use('sample').then(s=>{if(s){sample=s;fab.hidden=false}}).catch(()=>{});
+  }
+})();
+</script>
+
+</body>
+</html>
